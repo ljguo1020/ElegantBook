@@ -129,7 +129,11 @@
 
 \cs_new_protected_nopar:Npn \elegant_declare_theme:nn #1#2
   {
-    \tl_set:cn { g_elegant_theme_#1_tl } { #2 }
+    \tl_set:cn { g_elegant_theme_#1_tl } 
+    {
+      \prop_set_from_keyval:Nn \l__elegant_colors_prop { #2 }
+      \prop_map_function:NN \l__elegant_colors_prop \elegant_declare_color:nn
+    }
     \clist_gput_right:Nn \l__elegant_theme_clist { #1 }
   }
 
@@ -147,20 +151,16 @@
 
 \elegant_declare_theme:nn { Techno~Blue }
   {
-    \prop_set_from_keyval:Nn \l__elegant_colors_prop
-    {
-      chapter      =      { 60,  113, 183 },
-      section      =      { 60,  113, 183 },
-      subsection   =      { 60,  113, 183 },
-      definition   =      { 0,   166, 82  },
-      exercise     =      { 0,   166, 82  },
-      problem      =      { 0,   166, 82  },
-      theorem      =      { 255, 134, 24  },
-      lemma        =      { 255, 134, 24  },
-      corollary    =      { 255, 134, 24  },
-      proposition  =      { 0,   174, 247 }
-    }
-    \prop_map_function:NN \l__elegant_colors_prop \elegant_declare_color:nn
+    chapter      =      { 60,  113, 183 },
+    section      =      { 60,  113, 183 },
+    subsection   =      { 60,  113, 183 },
+    definition   =      { 0,   166, 82  },
+    exercise     =      { 0,   166, 82  },
+    problem      =      { 0,   166, 82  },
+    theorem      =      { 255, 134, 24  },
+    lemma        =      { 255, 134, 24  },
+    corollary    =      { 255, 134, 24  },
+    proposition  =      { 0,   174, 247 }
   }
 
 
