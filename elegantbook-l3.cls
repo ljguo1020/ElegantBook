@@ -1,12 +1,7 @@
 \ProvidesExplClass{elegantbook-l3}{2024/06/17}{v1.0}{ElegantBook document class}
 
 
-% \RequirePackage{l3keys2e}
-
-
-
-
-
+\RequirePackage{l3keys2e}
 
 % message
 \prop_gput:Nnn \g_msg_module_type_prop { elegant } { Class }
@@ -14,19 +9,17 @@
 
 \msg_new:nnn { elegant }{ not support language }
 {
-  The~language~`#1'~is~not~support. \MessageBreak
-  Please~select~one~of~the~following~languages. \MessageBreak
+  The~language~`#1'~is~not~support. ^^J
+  Please~select~one~of~the~following~languages. ^^J
   \clist_use:Nn \l__elegant_language_clist {,~} 
 }
 
 \msg_new:nnn { elegant }{ not support theme }
 {
-  The~theme~`#1'~is~not~support. \MessageBreak
-  Please~select~one~of~the~following~themes. \MessageBreak
+  The~theme~`#1'~is~not~support. ^^J
+  Please~select~one~of~the~following~themes. ^^J
   \clist_use:Nn \l__elegant_theme_clist {,~} 
 }
-
-
 
 
 % class options
@@ -40,14 +33,6 @@
 
 \prop_new:N \l__elegant_colors_prop
 
-% \tl_new:N \l__elegant_mode_tl 
-% \tl_new:N \l__elegant_result_tl
-% \tl_new:N \l__elegant_device_tl
-% \tl_new:N \l__elegant_math_tl
-% \tl_new:N \l__elegant_marginpar_tl
-% \tl_new:N \l__elegant_toc_tl
-% \tl_new:N \l__elegant_scheme_tl
-
 
 % colors 
 \RequirePackage{xcolor}
@@ -56,19 +41,24 @@
 \cs_set_eq:NN \__elegant_declare_color:nnn \definecolor
 
 
-% #1 name, #2 value
-\cs_new_protected_nopar:Npn \elegant_declare_color:nn #1#2 
-{
-  \__elegant_declare_color:nnn { elegant_#1_color } { RGB } { #2 }
-}
+% #1 name, #2 model, #3 value
 
-
-
-
-
-
-
-
+\cs_new_protected_nopar:Npn \elegant_declare_color:nnn #1#2#3
+  {
+    \tl_if_eq:nnTF { #2 } { name }
+      {
+        \colorlet{ elegant_#1_color }{ #3 }
+      }
+      {
+        \tl_if_eq:nnTF { #2 } { expression }
+          {
+            \colorlet{ elegant_#1_color }{ #3 }
+          }
+          {
+            \__elegant_declare_color:nnn { elegant_#1_color } { #2 } { #3 }
+          }
+      }
+  }
 
 
 \keys_define:nn { elegant / classoption }
@@ -132,7 +122,11 @@
     \tl_set:cn { g_elegant_theme_#1_tl } 
     {
       \prop_set_from_keyval:Nn \l__elegant_colors_prop { #2 }
-      \prop_map_function:NN \l__elegant_colors_prop \elegant_declare_color:nn
+      \prop_map_inline:Nn \l__elegant_colors_prop 
+      {
+        \exp_last_unbraced:Nno \elegant_declare_color:nnn { ##1 }{ ##2 }
+      }
+      
     }
     \clist_gput_right:Nn \l__elegant_theme_clist { #1 }
   }
@@ -151,17 +145,77 @@
 
 \elegant_declare_theme:nn { Techno~Blue }
   {
-    chapter      =      { 60,  113, 183 },
-    section      =      { 60,  113, 183 },
-    subsection   =      { 60,  113, 183 },
-    definition   =      { 0,   166, 82  },
-    exercise     =      { 0,   166, 82  },
-    problem      =      { 0,   166, 82  },
-    theorem      =      { 255, 134, 24  },
-    lemma        =      { 255, 134, 24  },
-    corollary    =      { 255, 134, 24  },
-    proposition  =      { 0,   174, 247 }
+    chapter      =   {RGB}{ 60,  113, 183 },
+    section      =   {RGB}{ 60,  113, 183 },
+    subsection   =   {RGB}{ 60,  113, 183 },
+    definition   =   {RGB}{ 0,   166, 82  },
+    exercise     =   {RGB}{ 0,   166, 82  },
+    problem      =   {RGB}{ 0,   166, 82  },
+    theorem      =   {RGB}{ 255, 134, 24  },
+    lemma        =   {RGB}{ 255, 134, 24  },
+    corollary    =   {RGB}{ 255, 134, 24  },
+    proposition  =   {RGB}{ 0,   174, 247 }
   }
+
+\elegant_declare_theme:nn { Fresh~Green }
+  {
+    chapter      =   {RGB}{ 0,   120, 2   },
+    section      =   {RGB}{ 0,   120, 2   },
+    subsection   =   {RGB}{ 0,   120, 2   },
+    definition   =   {RGB}{ 0,   120, 2   },
+    exercise     =   {RGB}{ 0,   120, 2   },
+    problem      =   {RGB}{ 0,   120, 2   },
+    theorem      =   {RGB}{ 230, 90,  7   },
+    lemma        =   {RGB}{ 230, 90,  7   },
+    corollary    =   {RGB}{ 230, 90,  7   },
+    proposition  =   {RGB}{ 0,   160, 152 }
+  }
+
+\elegant_declare_theme:nn { Polar~Blue }
+  {
+    chapter      =   {RGB}{ 31,  186, 190 },
+    section      =   {RGB}{ 31,  186, 190 },
+    subsection   =   {RGB}{ 31,  186, 190 },
+    definition   =   {RGB}{ 59,  180, 5   },
+    exercise     =   {RGB}{ 59,  180, 5   },
+    problem      =   {RGB}{ 59,  180, 5   },
+    theorem      =   {RGB}{ 175, 153, 8   },
+    lemma        =   {RGB}{ 175, 153, 8   },
+    corollary    =   {RGB}{ 175, 153, 8   },
+    proposition  =   {RGB}{ 244, 105, 102 }
+  }
+
+
+\elegant_declare_theme:nn { Rocky~Gray }
+  {
+    chapter      =   {RGB}{ 150, 150, 150 },
+    section      =   {RGB}{ 150, 150, 150 },
+    subsection   =   {RGB}{ 150, 150, 150 },
+    definition   =   {RGB}{ 150, 150, 150 },
+    exercise     =   {RGB}{ 150, 150, 150 },
+    problem      =   {RGB}{ 150, 150, 150 },
+    theorem      =   {RGB}{ 150, 150, 150 },
+    lemma        =   {RGB}{ 150, 150, 150 },
+    corollary    =   {RGB}{ 150, 150, 150 },
+    proposition  =   {RGB}{ 150, 150, 150 },
+  }
+
+\elegant_declare_theme:nn { Neon~Black }
+  {
+    chapter      =   {RGB}{ 0,   0,   0   },
+    section      =   {RGB}{ 0,   0,   0   },
+    subsection   =   {RGB}{ 0,   0,   0   },
+    definition   =   {RGB}{ 0,   0,   0   },
+    exercise     =   {RGB}{ 0,   0,   0   },
+    problem      =   {RGB}{ 0,   0,   0   },
+    theorem      =   {RGB}{ 0,   0,   0   },
+    lemma        =   {RGB}{ 0,   0,   0   },
+    corollary    =   {RGB}{ 0,   0,   0   },
+    proposition  =   {RGB}{ 0,   0,   0   },
+  }
+
+
+
 
 
 

@@ -1,12 +1,9 @@
-\documentclass[leqno, lang = cn, theme = Techno Blue, fleqn]{elegantbook-l3}
+\documentclass[leqno, lang = cn, theme = Polar Blue, fleqn]{elegantbook-l3}
 
 
 \ExplSyntaxOn
 
-\elegant_declare_theme:nn { TechnoBlue }
-  {
 
-  }
 
 
 \ExplSyntaxOff
@@ -14,7 +11,7 @@
 
 \begin{document}
 
-\color{elegant_definition_color}
+\color{elegant_chapter_color}
 
 \begin{equation}
   a^2 + b^2 = c^2
@@ -22,7 +19,12 @@
 
 \ExplSyntaxOn
 
-
+\clist_map_inline:nn 
+{
+  {a}{b}{c,d,e},
+  {m}{b}{d, ,h}
+}
+{``#1''}
 
 \ExplSyntaxOff
 \end{document}
