@@ -1,15 +1,26 @@
-\documentclass[leqno, lang = cn, theme = Polar Blue, fleqn]{elegantbook-l3}
+\documentclass[leqno, lang = cn, theme = Fresh Green, fleqn]{elegantbook-l3}
 
 
 \ExplSyntaxOn
 
-
+\keys_set:nn { elegant }
+{
+  % title = {是师生},
+  info = {
+    作者 = 郭李军,
+    机构 = 我都世界
+  }
+}
 
 
 \ExplSyntaxOff
 \usepackage{amsmath, amssymb, array}
 
 \begin{document}
+
+\ExplSyntaxOn
+  \elegant_maketitle: 
+\ExplSyntaxOff
 
 \color{elegant_chapter_color}
 

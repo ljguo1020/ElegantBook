@@ -1,6 +1,8 @@
 \ProvidesExplClass{elegantbook-l3}{2024/06/17}{v1.0}{ElegantBook document class}
 
 
+\def\ElegantLogo{ElegantBook}
+
 \RequirePackage{l3keys2e}
 
 % message
@@ -19,6 +21,12 @@
   The~theme~`#1'~is~not~support. ^^J
   Please~select~one~of~the~following~themes. ^^J
   \clist_use:Nn \l__elegant_theme_clist {,~} 
+}
+
+\msg_new:nnn { elegant }{ undefined color }
+{
+  The~Elegant~color~`#1'~is~undefined.^^J
+  Default~color~used.
 }
 
 
@@ -59,6 +67,8 @@
           }
       }
   }
+
+
 
 
 \keys_define:nn { elegant / classoption }
@@ -149,6 +159,7 @@
     section      =   {RGB}{ 60,  113, 183 },
     subsection   =   {RGB}{ 60,  113, 183 },
     definition   =   {RGB}{ 0,   166, 82  },
+    cover        =   {RGB}{ 0,   166, 82  },
     exercise     =   {RGB}{ 0,   166, 82  },
     problem      =   {RGB}{ 0,   166, 82  },
     theorem      =   {RGB}{ 255, 134, 24  },
@@ -162,6 +173,7 @@
     chapter      =   {RGB}{ 0,   120, 2   },
     section      =   {RGB}{ 0,   120, 2   },
     subsection   =   {RGB}{ 0,   120, 2   },
+    cover        =   {RGB}{ 0,   120, 2   },
     definition   =   {RGB}{ 0,   120, 2   },
     exercise     =   {RGB}{ 0,   120, 2   },
     problem      =   {RGB}{ 0,   120, 2   },
@@ -176,6 +188,7 @@
     chapter      =   {RGB}{ 31,  186, 190 },
     section      =   {RGB}{ 31,  186, 190 },
     subsection   =   {RGB}{ 31,  186, 190 },
+    cover        =   {RGB}{ 59,  180, 5   },
     definition   =   {RGB}{ 59,  180, 5   },
     exercise     =   {RGB}{ 59,  180, 5   },
     problem      =   {RGB}{ 59,  180, 5   },
@@ -191,6 +204,7 @@
     chapter      =   {RGB}{ 150, 150, 150 },
     section      =   {RGB}{ 150, 150, 150 },
     subsection   =   {RGB}{ 150, 150, 150 },
+    cover        =   {RGB}{ 150, 150, 150 },
     definition   =   {RGB}{ 150, 150, 150 },
     exercise     =   {RGB}{ 150, 150, 150 },
     problem      =   {RGB}{ 150, 150, 150 },
@@ -205,6 +219,7 @@
     chapter      =   {RGB}{ 0,   0,   0   },
     section      =   {RGB}{ 0,   0,   0   },
     subsection   =   {RGB}{ 0,   0,   0   },
+    cover        =   {RGB}{ 0,   0,   0   },
     definition   =   {RGB}{ 0,   0,   0   },
     exercise     =   {RGB}{ 0,   0,   0   },
     problem      =   {RGB}{ 0,   0,   0   },
@@ -216,7 +231,59 @@
 
 
 
+% maketitle
 
 
+\tl_new:N \l__elegant_title_tl 
+\tl_new:N \l__elegant_subtitle_tl 
+\tl_new:N \l__elegant_cover_image_tl 
+\tl_new:N \l__elegant_logo_image_tl 
+
+
+
+\tl_set:Nn \l__elegant_cover_image_tl { cover.jpg }
+\tl_set:Nn \l__elegant_logo_image_tl { logo-blue.png }
+\tl_set:Nn \l__elegant_title_tl { ElegantBook： 优美的 \LaTeX\ 书籍模板 }
+\tl_set:Nn \l__elegant_subtitle_tl { Elegant\LaTeX\ 经典之作 }
+
+\prop_new:N \l__elegant_cover_info_prop 
+
+\keys_define:nn { elegant }
+  {
+    title.tl_set:N = \l__elegant_title_tl,
+    subtitle.tl_set:N = \l__elegant_subtitle_tl,
+    cover~image.tl_set:N = \l__elegant_cover_image_tl,
+    info.code:n = {
+      \prop_set_from_keyval:Nn \l__elegant_cover_info_prop { #1 }
+    }
+  }
+
+
+\RequirePackage{graphicx, geometry, tikz}
+
+\graphicspath{{./figure/}}
+
+\cs_new_protected_nopar:Npn \elegant_maketitle: 
+  {
+    \titlepage 
+    \begin{tikzpicture}[remember~picture, overlay]
+      \node[anchor = north~west, inner~sep = 0pt,] at (current~page.north~west) {\includegraphics[width = \paperwidth, height = .8\paperwidth]{\tl_use:N \l__elegant_cover_image_tl}};
+      \fill[ elegant_cover_color ] ([yshift = -.8\paperwidth]current~page.north~west) rectangle ++ (\paperwidth, -0.5in);
+      \node[anchor = west, font = \Huge\bfseries] at ([shift = {(2em, -.8\paperwidth - 1.2in)}]current~page.north~west) {\tl_use:N \l__elegant_title_tl};
+      \node[anchor = west, font = \Large\bfseries] at ([shift = {(2.5em, -.8\paperwidth - 1.8in)}]current~page.north~west) {\tl_use:N \l__elegant_subtitle_tl};
+      \node[anchor = north~west, text = darkgray, align = left] at ([shift = {(3.7em, -.8\paperwidth - 2.1in)}]current~page.north~west) {
+        \prop_map_inline:Nn \l__elegant_cover_info_prop 
+        {
+          \textit{##1:}~##2 \\ 
+        }
+      };
+      \node[anchor = north~east, outer~sep=0pt, inner~sep=0pt] at ([shift = {(-.8in, -.8\paperwidth - 2.1in)}]current~page.north~east) {\includegraphics[width=4.2cm]{\tl_use:N \l__elegant_logo_image_tl}};
+    \end{tikzpicture}
+    \endtitlepage
+  }
+
+
+
+\geometry{a4paper}
 
 \endinput
