@@ -3,12 +3,18 @@
 
 \ExplSyntaxOn
 
-\keys_set:nn { elegant }
+
+
+\keys_set:nn { elegant  }
 {
-  % title = {是师生},
-  info = {
-    作者 = 郭李军,
-    机构 = 我都世界
+  cover-info = {
+    title = {ElegantBook：优美的 \LaTeX{} 书籍模板},
+    subtitle = {Elegant\LaTeX{} 经典之作},
+    cover~image = { cover.jpg },
+    logo~image = {logo-blue},
+    author = 郭李军,
+    institute = ElegantBook Program,
+    version = v1.0
   }
 }
 
@@ -18,9 +24,7 @@
 
 \begin{document}
 
-\ExplSyntaxOn
-  \elegant_maketitle: 
-\ExplSyntaxOff
+\maketitle
 
 \color{elegant_chapter_color}
 
@@ -30,6 +34,8 @@
 
 \ExplSyntaxOn
 
+
+\tl_use:c { elegant_part_name }
 \clist_map_inline:nn 
 {
   {a}{b}{c,d,e},

@@ -13,14 +13,14 @@
 {
   The~language~`#1'~is~not~support. ^^J
   Please~select~one~of~the~following~languages. ^^J
-  \clist_use:Nn \l__elegant_language_clist {,~} 
+  \clist_use:Nn \g__elegant_language_clist {,~} 
 }
 
 \msg_new:nnn { elegant }{ not support theme }
 {
   The~theme~`#1'~is~not~support. ^^J
   Please~select~one~of~the~following~themes. ^^J
-  \clist_use:Nn \l__elegant_theme_clist {,~} 
+  \clist_use:Nn \g__elegant_theme_clist {,~} 
 }
 
 \msg_new:nnn { elegant }{ undefined color }
@@ -29,13 +29,25 @@
   Default~color~used.
 }
 
+\msg_new:nnn { elegant }{ undefined cover info }
+{
+  The~Elegant~cover~info~`#1'~is~undefined.^^J
+}
+
+\msg_new:nnn { elegant }{ undefined cover style }
+{
+  The~Elegant~cover~style~`#1'~is~undefined.^^J
+  Please~select~one~of~the~following~styles. ^^J
+  \clist_use:Nn \g__elegant_cover_clist {,~} 
+}
 
 % class options
 \tl_new:N \l__elegant_base_class_options_tl
 \tl_new:N \l__elegant_language_tl 
 
-\clist_new:N \l__elegant_language_clist
-\clist_new:N \l__elegant_theme_clist
+\clist_new:N \g__elegant_language_clist
+\clist_new:N \g__elegant_theme_clist
+\clist_new:N \g__elegant_cover_clist
 
 \tl_new:N \l__elegant_theme_tl 
 
@@ -101,8 +113,8 @@
 
 \cs_new_protected_nopar:Npn \elegant_declare_language:nn #1#2 
   {
-    \tl_set:cn { g_elegant_language_#1_tl } { #2 }
-    \clist_gput_right:Nn \l__elegant_language_clist { #1 }
+    \tl_gset:cn { g_elegant_language_#1_tl } { #2 }
+    \clist_gput_right:Nn \g__elegant_language_clist { #1 }
   }
 
 
@@ -120,16 +132,20 @@
     }
   }
 
+\cs_new_protected_nopar:Npn \elegant_set_name:nn #1#2
+  {
+    \tl_set:cn { elegant_#1_name } { #2 }
+  }
 
 \elegant_declare_language:nn { cn }
   {
     \RequirePackage{ctex}
-    \def\ad{sd}
+    \elegant_set_name:nn {part} {章}
   }
 
 \cs_new_protected_nopar:Npn \elegant_declare_theme:nn #1#2
   {
-    \tl_set:cn { g_elegant_theme_#1_tl } 
+    \tl_gset:cn { g_elegant_theme_#1_tl } 
     {
       \prop_set_from_keyval:Nn \l__elegant_colors_prop { #2 }
       \prop_map_inline:Nn \l__elegant_colors_prop 
@@ -138,7 +154,7 @@
       }
       
     }
-    \clist_gput_right:Nn \l__elegant_theme_clist { #1 }
+    \clist_gput_right:Nn \g__elegant_theme_clist { #1 }
   }
 
 \AtBeginDocument
@@ -229,59 +245,102 @@
     proposition  =   {RGB}{ 0,   0,   0   },
   }
 
-
-
 % maketitle
 
 
-\tl_new:N \l__elegant_title_tl 
-\tl_new:N \l__elegant_subtitle_tl 
-\tl_new:N \l__elegant_cover_image_tl 
-\tl_new:N \l__elegant_logo_image_tl 
+% \tl_new:N \l__elegant_title_tl 
+% \tl_new:N \l__elegant_subtitle_tl 
+% \tl_new:N \l__elegant_cover_image_tl 
+% \tl_new:N \l__elegant_logo_image_tl 
 
 
 
-\tl_set:Nn \l__elegant_cover_image_tl { cover.jpg }
-\tl_set:Nn \l__elegant_logo_image_tl { logo-blue.png }
-\tl_set:Nn \l__elegant_title_tl { ElegantBook： 优美的 \LaTeX\ 书籍模板 }
-\tl_set:Nn \l__elegant_subtitle_tl { Elegant\LaTeX\ 经典之作 }
 
-\prop_new:N \l__elegant_cover_info_prop 
 
-\keys_define:nn { elegant }
+% \keys_define:nn { elegant / cover }
+%   {
+%     title.tl_set:N = \l__elegant_title_tl,
+%     subtitle.tl_set:N = \l__elegant_subtitle_tl,
+%     cover~image.tl_set:N = \l__elegant_cover_image_tl,
+%     logo~image.tl_set:N = \l__elegant_logo_image_tl,
+%     extrainfo.code:n = {
+%       \prop_set_from_keyval:Nn \l__elegant_cover_extrainfo_prop { #1 }
+%     }
+%   }
+
+
+\cs_new_protected_nopar:Npn \__elegant_declare_cover_info:nn #1#2 
   {
-    title.tl_set:N = \l__elegant_title_tl,
-    subtitle.tl_set:N = \l__elegant_subtitle_tl,
-    cover~image.tl_set:N = \l__elegant_cover_image_tl,
-    info.code:n = {
-      \prop_set_from_keyval:Nn \l__elegant_cover_info_prop { #1 }
+    \tl_set:cn { l__elegant_cover_info_#1_tl } { #2 }
+  }
+
+\prop_new:N \g__elegant_cover_info_prop 
+
+\cs_new_protected_nopar:Npn \__elegant_cover_info_handler:n #1 
+  {
+    \prop_set_from_keyval:Nn \g__elegant_cover_info_prop { #1 }
+    \prop_map_function:NN \g__elegant_cover_info_prop \__elegant_declare_cover_info:nn
+  }
+
+\cs_new_protected_nopar:Npn \elegant_use_cover_info:n #1
+  {
+    \tl_if_exist:cTF { l__elegant_cover_info_#1_tl }
+    {
+      \tl_use:c { l__elegant_cover_info_#1_tl }
+    }
+    {
+      \msg_error:nnn { elegant }{ undefined cover info }{ #1 }
     }
   }
 
+\keys_define:nn { elegant }
+{
+  cover-info.code:n = \__elegant_cover_info_handler:n { #1 } 
+}
 
 \RequirePackage{graphicx, geometry, tikz}
 
 \graphicspath{{./figure/}}
 
-\cs_new_protected_nopar:Npn \elegant_maketitle: 
+
+
+\cs_new_protected_nopar:Npn \elegant_declare_cover_style:nn #1#2 
+  {
+    \tl_gset:cn { g_elegant_cover_#1_tl } { #2 }
+    \clist_gput_right:Nn \g__elegant_cover_clist { #1 }
+  }
+
+
+\elegant_declare_cover_style:nn { default }
   {
     \titlepage 
     \begin{tikzpicture}[remember~picture, overlay]
-      \node[anchor = north~west, inner~sep = 0pt,] at (current~page.north~west) {\includegraphics[width = \paperwidth, height = .8\paperwidth]{\tl_use:N \l__elegant_cover_image_tl}};
+      \node[anchor = north~west, inner~sep = 0pt,] at (current~page.north~west) {\includegraphics[width = \paperwidth, height = .8\paperwidth]{\elegant_use_cover_info:n {cover~image}}};
       \fill[ elegant_cover_color ] ([yshift = -.8\paperwidth]current~page.north~west) rectangle ++ (\paperwidth, -0.5in);
-      \node[anchor = west, font = \Huge\bfseries] at ([shift = {(2em, -.8\paperwidth - 1.2in)}]current~page.north~west) {\tl_use:N \l__elegant_title_tl};
-      \node[anchor = west, font = \Large\bfseries] at ([shift = {(2.5em, -.8\paperwidth - 1.8in)}]current~page.north~west) {\tl_use:N \l__elegant_subtitle_tl};
+      \node[anchor = west, font = \Huge\bfseries] at ([shift = {(2em, -.8\paperwidth - 1.2in)}]current~page.north~west) {\elegant_use_cover_info:n { title }};
+      \node[anchor = west, font = \Large\bfseries] at ([shift = {(2.5em, -.8\paperwidth - 1.8in)}]current~page.north~west) {\elegant_use_cover_info:n { subtitle }};
       \node[anchor = north~west, text = darkgray, align = left] at ([shift = {(3.7em, -.8\paperwidth - 2.1in)}]current~page.north~west) {
-        \prop_map_inline:Nn \l__elegant_cover_info_prop 
-        {
-          \textit{##1:}~##2 \\ 
-        }
+        \textit{作者}:~\elegant_use_cover_info:n { author } \\
+        \textit{组织}:~\elegant_use_cover_info:n { institute } \\
+        \textit{版本}:~\elegant_use_cover_info:n { version }
       };
-      \node[anchor = north~east, outer~sep=0pt, inner~sep=0pt] at ([shift = {(-.8in, -.8\paperwidth - 2.1in)}]current~page.north~east) {\includegraphics[width=4.2cm]{\tl_use:N \l__elegant_logo_image_tl}};
+      \node[anchor = north~east, outer~sep=0pt, inner~sep=0pt] at ([shift = {(-.8in, -.8\paperwidth - 2.1in)}]current~page.north~east) {\includegraphics[width=4.2cm]{\elegant_use_cover_info:n {logo~image}}};
     \end{tikzpicture}
     \endtitlepage
   }
 
+
+\RenewDocumentCommand\maketitle{O{default}}
+  {
+    \tl_if_exist:cTF { g_elegant_cover_#1_tl }
+    {
+      \tl_use:c { g_elegant_cover_#1_tl }
+    }
+    {
+      % error / message
+      \msg_error:nnn { elegant }{ undefined cover style } { #1 }
+    }
+  }
 
 
 \geometry{a4paper}
