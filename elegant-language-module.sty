@@ -1,0 +1,48 @@
+\ProvidesExplPackage{elegant-language-module}{2024/06/17}{1.0}{ElegantLaTeX Language Moudle}
+
+
+\tl_new:N \l__elegant_language_tl 
+
+\clist_new:N \g__elegant_language_clist
+
+
+\msg_new:nnn { elegant }{ not support language }
+{
+  The~language~`#1'~is~not~support. ^^J
+  Please~select~one~of~the~following~languages. ^^J
+  \clist_use:Nn \g__elegant_language_clist {,~} 
+}
+
+
+\cs_new_protected_nopar:Npn \elegant_declare_language:nn #1#2 
+  {
+    \tl_gset:cn { g_elegant_language_#1_tl } { #2 }
+    \clist_gput_right:Nn \g__elegant_language_clist { #1 }
+  }
+
+
+\AtBeginDocument
+  {
+    \let \xeCJK@document@left@hook \relax
+    \let \xeCJK@document@hook \relax
+    \tl_if_exist:cTF { g_elegant_language_ \l__elegant_language_tl _tl }
+    {
+      \tl_use:c { g_elegant_language_ \l__elegant_language_tl _tl }
+    }
+    {
+      % error / message
+      \msg_error:nnx { elegant }{ not support language } { \l__elegant_language_tl }
+    }
+  }
+
+
+\cs_new_protected_nopar:Npn \elegant_define_name:nn #1#2
+  {
+    \tl_set:cn { elegant_#1_name } { #2 }
+  }
+  
+\elegant_declare_language:nn { cn }
+  {
+    \RequirePackage{ctex}
+    \elegant_define_name:nn {part} {章}
+  }

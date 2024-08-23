@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.12)  21 AUG 2024 18:01
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.12)  23 AUG 2024 13:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,56 +9,58 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
 (./elegantbook-l3.cls
 Document Class: elegantbook-l3 2024/06/17 v1.0 ElegantBook document class
-(d:/texlive/2024/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (d:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-07-20 L3 programming layer (loader) 
- (d:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
-\g__graphics_track_int=\count190
-\l__pdf_internal_box=\box52
-\g__pdf_backend_annotation_int=\count191
-\g__pdf_backend_link_int=\count192
-))
-Package: l3keys2e 2024-05-08 LaTeX2e option processing using LaTeX3 keys
-) (d:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
- (d:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: xetex.def on input line 274.
- (d:/texlive/2024/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
-) (d:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
-Package xcolor Info: Model `RGB' extended on input line 1366.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-) (d:/texlive/2024/texmf-dist/tex/latex/base/book.cls
+(d:/texlive/2024/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2024/02/08 v1.4n Standard LaTeX document class
 (d:/texlive/2024/texmf-dist/tex/latex/base/bk10.clo
 File: bk10.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count193
-\c@chapter=\count194
-\c@section=\count195
-\c@subsection=\count196
-\c@subsubsection=\count197
-\c@paragraph=\count198
-\c@subparagraph=\count199
-\c@figure=\count266
-\c@table=\count267
+\c@part=\count190
+\c@chapter=\count191
+\c@section=\count192
+\c@subsection=\count193
+\c@subsubsection=\count194
+\c@paragraph=\count195
+\c@subparagraph=\count196
+\c@figure=\count197
+\c@table=\count198
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen141
-) (d:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+) (d:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
  (d:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (d:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+) (d:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (d:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count199
+\Gm@cntv=\count266
+\c@Gm@tempcnt=\count267
+\Gm@bindingoffset=\dimen142
+\Gm@wd@mp=\dimen143
+\Gm@odd@mp=\dimen144
+\Gm@even@mp=\dimen145
+\Gm@layoutwidth=\dimen146
+\Gm@layoutheight=\dimen147
+\Gm@layouthoffset=\dimen148
+\Gm@layoutvoffset=\dimen149
+\Gm@dimlist=\toks18
+) (d:/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (d:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (d:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (d:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen150
+\pgfutil@tempdimb=\dimen151
+) (d:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box52
+) (d:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (d:/texlive/2024/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (d:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (d:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (d:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
  (d:/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
@@ -66,39 +68,12 @@ Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 106.
-)
-\Gin@req@height=\dimen142
-\Gin@req@width=\dimen143
-) (d:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
- (d:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (d:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
+ (d:/texlive/2024/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
 ))
-\Gm@cnth=\count268
-\Gm@cntv=\count269
-\c@Gm@tempcnt=\count270
-\Gm@bindingoffset=\dimen144
-\Gm@wd@mp=\dimen145
-\Gm@odd@mp=\dimen146
-\Gm@even@mp=\dimen147
-\Gm@layoutwidth=\dimen148
-\Gm@layoutheight=\dimen149
-\Gm@layouthoffset=\dimen150
-\Gm@layoutvoffset=\dimen151
-\Gm@dimlist=\toks18
-) (d:/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (d:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (d:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (d:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks19
-\pgfutil@tempdima=\dimen152
-\pgfutil@tempdimb=\dimen153
-) (d:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box53
-) (d:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (d:/texlive/2024/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
-))
-Package: pgf 2023-01-15 v3.1.10 (3.1.10)
- (d:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (d:/texlive/2024/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (d:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
+) (d:/texlive/2024/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (d:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (d:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks20
@@ -118,14 +93,14 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yd=\dimen163
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count271
-\c@pgf@countb=\count272
-\c@pgf@countc=\count273
-\c@pgf@countd=\count274
+\c@pgf@counta=\count268
+\c@pgf@countb=\count269
+\c@pgf@countc=\count270
+\c@pgf@countd=\count271
 \t@pgf@toka=\toks23
 \t@pgf@tokb=\toks24
 \t@pgf@tokc=\toks25
-\pgf@sys@id@count=\count275
+\pgf@sys@id@count=\count272
  (d:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -137,24 +112,39 @@ File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
  (d:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )
-\pgfsys@objnum=\count276
+\pgfsys@objnum=\count273
 ))) (d:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count277
-\pgfsyssoftpath@bigbuffer@items=\count278
+\pgfsyssoftpath@smallbuffer@items=\count274
+\pgfsyssoftpath@bigbuffer@items=\count275
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+)) (d:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (d:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+ (d:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen164
-\pgfmath@count=\count279
-\pgfmath@box=\box54
+\pgfmath@count=\count276
+\pgfmath@box=\box53
 \pgfmath@toks=\toks26
 \pgfmath@stack@operand=\toks27
 \pgfmath@stack@operation=\toks28
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count280
+\c@pgfmathroundto@lastzeros=\count277
 )) (d:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen165
@@ -181,10 +171,10 @@ File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@start@additional=\dimen182
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box55
-\pgf@hbox=\box56
-\pgf@layerbox@main=\box57
-\pgf@picture@serial@count=\count281
+\pgfpic=\box54
+\pgf@hbox=\box55
+\pgf@layerbox@main=\box56
+\pgf@picture@serial@count=\count278
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen183
@@ -205,13 +195,13 @@ File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen188
-\pgf@sys@shading@range@num=\count282
-\pgf@shadingcount=\count283
+\pgf@sys@shading@range@num=\count279
+\pgf@shadingcount=\count280
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box58
+\pgfexternal@startupbox=\box57
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -222,7 +212,7 @@ File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (d:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box59
+\pgfnodeparttextbox=\box58
 ) (d:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (d:/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
@@ -241,7 +231,7 @@ Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (d:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count284
+\pgf@plot@mark@count=\count281
 \pgfplotmarksize=\dimen193
 )
 \tikz@lastx=\dimen194
@@ -252,24 +242,30 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@lastmovetoy=\dimen199
 \tikzleveldistance=\dimen256
 \tikzsiblingdistance=\dimen257
-\tikz@figbox=\box60
-\tikz@figbox@bg=\box61
-\tikz@tempbox=\box62
-\tikz@tempbox@bg=\box63
-\tikztreelevel=\count285
-\tikznumberofchildren=\count286
-\tikznumberofcurrentchild=\count287
-\tikz@fig@count=\count288
+\tikz@figbox=\box59
+\tikz@figbox@bg=\box60
+\tikz@tempbox=\box61
+\tikz@tempbox@bg=\box62
+\tikztreelevel=\count282
+\tikznumberofchildren=\count283
+\tikznumberofcurrentchild=\count284
+\tikz@fig@count=\count285
  (d:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count289
-\pgfmatrixcurrentcolumn=\count290
-\pgf@matrix@numberofcolumns=\count291
+\pgfmatrixcurrentrow=\count286
+\pgfmatrixcurrentcolumn=\count287
+\pgf@matrix@numberofcolumns=\count288
 )
-\tikz@expandcount=\count292
+\tikz@expandcount=\count289
  (d:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))) (d:/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
+))) (./elegant-language-module.sty
+Package: elegant-language-module 2024/06/17 v1.0 ElegantLaTeX Language Moudle
+) (./elegant-theme-module.sty
+Package: elegant-theme-module 2024/06/17 v1.0 ElegantLaTeX Theme Moudle
+) (./elegant-cover-module.sty
+Package: elegant-cover-module 2024/06/17 v1.0 ElegantLaTeX Cover Moudle
+)) (d:/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/05/23 v2.17q AMS math features
 \@mathmargin=\skip51
 
@@ -286,19 +282,19 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (d:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count293
+\inf@bad=\count290
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count294
-\leftroot@=\count295
+\uproot@=\count291
+\leftroot@=\count292
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count296
-\DOTSCASE@=\count297
+\classnum@=\count293
+\DOTSCASE@=\count294
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box64
-\strutbox@=\box65
+\Mathstrutbox@=\box63
+\strutbox@=\box64
 LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
@@ -306,20 +302,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen260
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count298
+\macc@depth=\count295
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count299
+\c@MaxMatrixCols=\count296
 \dotsspace@=\muskip17
-\c@parentequation=\count300
-\dspbrk@lvl=\count301
+\c@parentequation=\count297
+\dspbrk@lvl=\count298
 \tag@help=\toks32
-\row@=\count302
-\column@=\count303
-\maxfields@=\count304
+\row@=\count299
+\column@=\count300
+\maxfields@=\count301
 \andhelp@=\toks33
 \eqnshift@=\dimen261
 \alignsep@=\dimen262
@@ -345,36 +341,79 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (d:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
 \col@sep=\dimen267
-\ar@mcellbox=\box66
+\ar@mcellbox=\box65
 \extrarowheight=\dimen268
 \NC@list=\toks36
 \extratabsurround=\skip54
 \backup@length=\skip55
-\ar@cellbox=\box67
+\ar@cellbox=\box66
+) (d:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
+\g__graphics_track_int=\count302
+\l__pdf_internal_box=\box67
+\g__pdf_backend_annotation_int=\count303
+\g__pdf_backend_link_int=\count304
 ) (./elegantbook-cn.aux)
 \openout1 = `elegantbook-cn.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 22.
  (d:/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
- (d:/texlive/2024/texmf-dist/tex/latex/ctex/ctex.sty
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(72.26997pt, 700.5069pt, 72.26997pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=700.5069pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-73.12352pt
+* \headheight=61.74242pt
+* \headsep=11.38109pt
+* \topskip=10.0pt
+* \footskip=34.1433pt
+* \marginparwidth=125.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(d:/texlive/2024/texmf-dist/tex/latex/ctex/ctex.sty (d:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-07-20 L3 programming layer (loader) 
+)
 Package: ctex 2022/07/14 v2.5.10 Chinese adapter in LaTeX (CTEX)
  (d:/texlive/2024/texmf-dist/tex/latex/ctex/ctexhook.sty
 Package: ctexhook 2022/07/14 v2.5.10 Document and package hooks (CTEX)
@@ -597,47 +636,13 @@ Package fontspec Info:
 )) (d:/texlive/2024/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
 )
-*geometry* driver: auto-detecting
-*geometry* detected driver: xetex
-*geometry* verbose mode - [ preamble ] result:
-* driver: xetex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
-* h-part:(L,W,R)=(71.70166pt, 418.25368pt, 107.55254pt)
-* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=418.25368pt
-* \textheight=591.5302pt
-* \oddsidemargin=-0.56833pt
-* \evensidemargin=35.28255pt
-* \topmargin=-0.93083pt
-* \headheight=12.0pt
-* \headsep=18.06749pt
-* \topskip=10.0pt
-* \footskip=25.29494pt
-* \marginparwidth=125.0pt
-* \marginparsep=7.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
 File: ./figure/cover.jpg Graphic file (type bmp)
 <./figure/cover.jpg>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
-(d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+ (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
  (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -647,22 +652,24 @@ File: ./figure/logo-blue.png Graphic file (type bmp)
 
 [1
 
-
 ]
+File: ./figure/cover-1.jpg Graphic file (type bmp)
+<./figure/cover-1.jpg>
 
-[2] (./elegantbook-cn.aux)
+
+[1] (./elegantbook-cn.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2022/07/14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 18893 strings out of 474235
- 443009 string characters out of 5745818
- 1923612 words of memory out of 5000000
- 41234 multiletter control sequences out of 15000+600000
- 572070 words of font info for 117 fonts, out of 8000000 for 9000
+ 18928 strings out of 474235
+ 444531 string characters out of 5745818
+ 1924612 words of memory out of 5000000
+ 41272 multiletter control sequences out of 15000+600000
+ 570769 words of font info for 110 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,6n,111p,427b,658s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,6n,121p,427b,658s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on elegantbook-cn.pdf (2 pages).

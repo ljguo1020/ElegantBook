@@ -2,48 +2,44 @@
 
 
 \ExplSyntaxOn
-
-
-
-\keys_set:nn { elegant  }
+\keys_set:nn { elegant / cover }
 {
-  cover-info = {
+  info = {
     title = {ElegantBook：优美的 \LaTeX{} 书籍模板},
     subtitle = {Elegant\LaTeX{} 经典之作},
     cover~image = { cover.jpg },
     logo~image = {logo-blue},
     author = 郭李军,
     institute = ElegantBook Program,
-    version = v1.0
+    version = v1.0,
+    date = 2023/10/01,
+    extrainfo = 一句话hahhahaha 
   }
 }
-
-
 \ExplSyntaxOff
 \usepackage{amsmath, amssymb, array}
 
 \begin{document}
+\let\cleardoublepage\relax
+
 
 \maketitle
 
-\color{elegant_chapter_color}
-
-\begin{equation}
-  a^2 + b^2 = c^2
-\end{equation}
-
 \ExplSyntaxOn
-
-
-\tl_use:c { elegant_part_name }
-\clist_map_inline:nn 
+\keys_set:nn { elegant / cover }
 {
-  {a}{b}{c,d,e},
-  {m}{b}{d, ,h}
+  info = {
+    cover~image = { cover-1.jpg },
+    title = {Elegant\ Book},
+    subtitle = {Elegant\ \LaTeX\ Template},
+    author = {Ljguo<ljguo1020@gmail.com>},
+    institute = {ElegantBook\ Program}
+  }
 }
-{``#1''}
-
 \ExplSyntaxOff
+
+\maketitle[Skyrmion]
+
 \end{document}
 
 
