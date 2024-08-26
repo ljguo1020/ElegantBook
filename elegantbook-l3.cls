@@ -1,10 +1,19 @@
-\ProvidesExplClass{elegantbook-l3}{2024/06/17}{1.0}{ElegantBook document class}
+\def\elegant@date{2024/06/17}
+\def\elegant@version{1.0}
+
+\def\ProvideElegantMoudle#1#2{%
+  \ProvidesExplPackage{elegant-#1-module}{\elegant@date}{\elegant@version}{#2}%
+}
+
+\ProvidesExplClass{elegantbook-l3}{\elegant@date}{\elegant@version}{ElegantBook document class}
 
 
 \LoadClass{book}
 
 
-\def\ElegantLogo{ElegantBook}
+
+
+
 
 \RequirePackage{geometry, tikz}
 

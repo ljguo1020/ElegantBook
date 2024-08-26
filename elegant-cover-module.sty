@@ -1,4 +1,4 @@
-\ProvidesExplPackage{elegant-cover-module}{2024/06/17}{1.0}{ElegantLaTeX Cover Moudle}
+\ProvideElegantMoudle{cover}{ElegantLaTeX Cover Moudle}
 
 
 \clist_new:N \g__elegant_cover_clist
@@ -97,3 +97,12 @@
       \node[font = \Large] at ([yshift = -10.5cm]current~page.north) { \elegant_use_cover_info:n { institute } };
     \end{tikzpicture}
   }
+
+\NewDocumentCommand\ElegantDeclareCoverStyle{ m+m }
+  { \elegant_declare_cover_style:nn { #1 }{ #2 } }
+
+\NewDocumentCommand\ElegantUseCoverInfo{ m }
+  { \elegant_use_cover_info:n { #1 } }
+
+\NewDocumentCommand\ElegantCoverInfo{ m }
+  { \keys_set:nn { elegant / cover } { info = { #1 } } }

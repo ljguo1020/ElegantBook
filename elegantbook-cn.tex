@@ -1,22 +1,19 @@
 \documentclass[leqno, lang = cn, theme = Fresh Green, fleqn]{elegantbook-l3}
 
 
-\ExplSyntaxOn
-\keys_set:nn { elegant / cover }
-{
-  info = {
-    title = {ElegantBook：优美的 \LaTeX{} 书籍模板},
-    subtitle = {Elegant\LaTeX{} 经典之作},
-    cover~image = { cover.jpg },
-    logo~image = {logo-blue},
-    author = 郭李军,
-    institute = ElegantBook Program,
-    version = v1.0,
-    date = 2023/10/01,
-    extrainfo = 一句话hahhahaha 
-  }
+
+\ElegantCoverInfo{%
+  title = {ElegantBook：优美的 \LaTeX{} 书籍模板},
+  subtitle = {Elegant\LaTeX{} 经典之作},
+  cover image = { cover.jpg },
+  logo image = {logo-blue},
+  author = 郭李军,
+  institute = ElegantBook Program,
+  version = v1.0,
+  date = 2023/10/01,
+  extrainfo = 一句话hahhahaha 
 }
-\ExplSyntaxOff
+
 \usepackage{amsmath, amssymb, array}
 
 \begin{document}
@@ -25,18 +22,15 @@
 
 \maketitle
 
-\ExplSyntaxOn
-\keys_set:nn { elegant / cover }
-{
-  info = {
-    cover~image = { cover-1.jpg },
-    title = {Elegant\ Book},
-    subtitle = {Elegant\ \LaTeX\ Template},
-    author = {Ljguo<ljguo1020@gmail.com>},
-    institute = {ElegantBook\ Program}
-  }
+
+\ElegantCoverInfo{%
+  cover image = { cover-1.jpg },
+  title = {Elegant\ Book},
+  subtitle = {Elegant\ \LaTeX\ Template},
+  author = {Ljguo<ljguo1020@gmail.com>},
+  institute = {ElegantBook\ Program}
 }
-\ExplSyntaxOff
+
 
 \maketitle[Skyrmion]
 
