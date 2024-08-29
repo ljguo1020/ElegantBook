@@ -4,16 +4,16 @@
 \clist_new:N \g__elegant_cover_clist
 
 \msg_new:nnn { elegant }{ undefined cover info }
-{
-  The~Elegant~cover~info~`#1'~is~undefined.^^J
-}
+  {
+    The~Elegant~cover~info~`#1'~is~undefined.\\
+  }
 
 \msg_new:nnn { elegant }{ undefined cover style }
-{
-  The~Elegant~cover~style~`#1'~is~undefined.^^J
-  Please~select~one~of~the~following~styles. ^^J
-  \clist_use:Nn \g__elegant_cover_clist {,~} 
-}
+  {
+    The~Elegant~cover~style~`#1'~is~undefined.\\
+    Please~select~one~of~the~following~styles. \\
+    \clist_use:Nn \g__elegant_cover_clist {,~} 
+  }
 
 
 
@@ -42,9 +42,9 @@
   }
 
 \keys_define:nn { elegant / cover }
-{
-  info.code:n = \__elegant_cover_info_handler:n { #1 } 
-}
+  {
+    info.code:n = \__elegant_cover_info_handler:n { #1 } 
+  }
 
 
 

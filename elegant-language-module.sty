@@ -7,11 +7,11 @@
 
 
 \msg_new:nnn { elegant }{ not support language }
-{
-  The~language~`#1'~is~not~support. ^^J
-  Please~select~one~of~the~following~languages. ^^J
-  \clist_use:Nn \g__elegant_language_clist {,~} 
-}
+  {
+    The~language~`#1'~is~not~support. \\
+    Please~select~one~of~the~following~languages. \\
+    \clist_use:Nn \g__elegant_language_clist {,~} 
+  }
 
 
 \cs_new_protected_nopar:Npn \elegant_declare_language:nn #1#2 

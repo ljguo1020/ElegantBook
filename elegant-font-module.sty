@@ -1,3 +1,55 @@
 \ProvideElegantMoudle{font}{ElegantLaTeX Font Moudle}
 
+\tl_new:N \l__elegant_font_tl 
 
+\clist_new:N \g__elegant_font_clist
+
+
+\msg_new:nnn { elegant }{ not support font }
+  {
+    The~font~option~`#1'~is~not~support. \\
+    Please~select~one~of~the~following~font~options. \\
+    \clist_use:Nn \g__elegant_font_clist {,~} 
+  }
+
+
+\cs_new_protected_nopar:Npn \elegant_declare_font:nn #1#2 
+  {
+    \tl_gset:cn { g_elegant_font_#1_tl } { #2 }
+    \clist_gput_right:Nn \g__elegant_font_clist { #1 }
+  }
+
+\elegant_declare_font:nn { founder }
+  {
+    
+  }
+
+
+\ifdefstring{\ELEGANT@lang}{cn}{
+  \ifdefstring{\ELEGANT@chinesefont}{founder}{
+    \RequirePackage[UTF8, scheme=plain, fontset=none]{ctex}
+    \setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong-Z01}
+    \setCJKsansfont[BoldFont={FZHei-B01}]{FZKai-Z03}
+    \setCJKmonofont[BoldFont={FZHei-B01}]{FZFangSong-Z02}
+    \setCJKfamilyfont{zhsong}{FZShuSong-Z01}
+    \setCJKfamilyfont{zhhei}{FZHei-B01}
+    \setCJKfamilyfont{zhkai}[BoldFont={FZHei-B01}]{FZKai-Z03}
+    \setCJKfamilyfont{zhfs}[BoldFont={FZHei-B01}]{FZFangSong-Z02}
+    \newcommand*{\songti}{\CJKfamily{zhsong}}
+    \newcommand*{\heiti}{\CJKfamily{zhhei}}
+    \newcommand*{\kaishu}{\CJKfamily{zhkai}}
+    \newcommand*{\fangsong}{\CJKfamily{zhfs}}}{\relax}
+  
+  \ifdefstring{\ELEGANT@chinesefont}{nofont}{
+    \RequirePackage[UTF8,scheme=plain,fontset=none]{ctex}
+    \xeCJKsetup{AutoFakeBold=true}
+    }{\relax}
+
+  \ifdefstring{\ELEGANT@chinesefont}{ctexfont}{
+    \RequirePackage[UTF8,scheme=plain]{ctex}
+    \xeCJKsetup{AutoFakeBold=true}
+    }{\relax}
+  
+  \AfterEndPreamble{
+    \setlength\parindent{2\ccwd}}
+}{\relax}

@@ -4,17 +4,17 @@
 \RequirePackage{xcolor}
 
 \msg_new:nnn { elegant }{ not support theme }
-{
-  The~theme~`#1'~is~not~support. ^^J
-  Please~select~one~of~the~following~themes. ^^J
-  \clist_use:Nn \g__elegant_theme_clist {,~} 
-}
+  {
+    The~theme~`#1'~is~not~support. \\
+    Please~select~one~of~the~following~themes. \\
+    \clist_use:Nn \g__elegant_theme_clist {,~} 
+  }
 
 \msg_new:nnn { elegant }{ undefined color }
-{
-  The~Elegant~color~`#1'~is~undefined.^^J
-  Default~color~used.
-}
+  {
+    The~Elegant~color~`#1'~is~undefined.\\
+    Default~color~used.
+  }
 
 
 \clist_new:N \g__elegant_theme_clist
