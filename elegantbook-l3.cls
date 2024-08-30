@@ -43,6 +43,9 @@
 
 \elegant_load_moudle:n { cover }
 
+\elegant_load_moudle:n { font }
+
+
 
 % class options
 \tl_new:N \l__elegant_base_class_options_tl
@@ -55,6 +58,8 @@
     lang.initial:n = cn,
     theme.tl_set:N = \l__elegant_theme_tl,
     theme.initial:n = {Techno~Blue},
+    font.tl_set:N = \l__elegant_font_tl,
+    font.initial:n = { founder },
     unknown.code:n = \__elegant_parse_unknown_option:n { #1 }
   }
 

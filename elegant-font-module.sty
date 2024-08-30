@@ -19,37 +19,75 @@
     \clist_gput_right:Nn \g__elegant_font_clist { #1 }
   }
 
-\elegant_declare_font:nn { founder }
+
+\AtBeginDocument
   {
-    
+    \tl_if_exist:cTF { g_elegant_font_ \l__elegant_font_tl _tl }
+    {
+      \tl_use:c { g_elegant_font_ \l__elegant_font_tl _tl }
+    }
+    {
+      % error / message
+      \msg_error:nnx { elegant }{ not support font } { \l__elegant_font_tl }
+    }
   }
 
 
-\ifdefstring{\ELEGANT@lang}{cn}{
-  \ifdefstring{\ELEGANT@chinesefont}{founder}{
-    \RequirePackage[UTF8, scheme=plain, fontset=none]{ctex}
-    \setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong-Z01}
-    \setCJKsansfont[BoldFont={FZHei-B01}]{FZKai-Z03}
-    \setCJKmonofont[BoldFont={FZHei-B01}]{FZFangSong-Z02}
-    \setCJKfamilyfont{zhsong}{FZShuSong-Z01}
-    \setCJKfamilyfont{zhhei}{FZHei-B01}
-    \setCJKfamilyfont{zhkai}[BoldFont={FZHei-B01}]{FZKai-Z03}
-    \setCJKfamilyfont{zhfs}[BoldFont={FZHei-B01}]{FZFangSong-Z02}
-    \newcommand*{\songti}{\CJKfamily{zhsong}}
-    \newcommand*{\heiti}{\CJKfamily{zhhei}}
-    \newcommand*{\kaishu}{\CJKfamily{zhkai}}
-    \newcommand*{\fangsong}{\CJKfamily{zhfs}}}{\relax}
-  
-  \ifdefstring{\ELEGANT@chinesefont}{nofont}{
-    \RequirePackage[UTF8,scheme=plain,fontset=none]{ctex}
-    \xeCJKsetup{AutoFakeBold=true}
-    }{\relax}
+\elegant_declare_font:nn { founder }
+  {
+    \RequirePackage[fontset = none]{ctex}
+    \setCJKmainfont{LXGWWenKai-Regular}[
+      Path = ./font/,
+      BoldFont = LXGWWenKai-Bold,
+      LightFont = LXGWWenKai-Light,
+      ItalicFont = LXGWWenKai-Light,
+      BoldItalicFont = LXGWWenKai-Bold,
+      UprightFont = LXGWWenKai-Regular,
+      SmallCapsFont = LXGWWenKai-Regular,
+      Scale = 0.58, 
+      Color = teal
+    ]
+    \setmainfont{LXGWWenKai-Regular}[
+      Path = ./font/,
+      BoldFont = LXGWWenKai-Bold,
+      LightFont = LXGWWenKai-Light,
+      ItalicFont = LXGWWenKai-Light,
+      BoldItalicFont = LXGWWenKai-Bold,
+      UprightFont = LXGWWenKai-Regular,
+      SmallCapsFont={LXGWWenKai-Bold},
+      SmallCapsFeatures={Letters=SmallCaps, Scale = 1.5},
+      Scale = 1.0,
+      Color = blue,
+      ItalicFeatures={Style=Swash, Color=992211, Scale = 0.75}
+    ]
+  }
 
-  \ifdefstring{\ELEGANT@chinesefont}{ctexfont}{
-    \RequirePackage[UTF8,scheme=plain]{ctex}
-    \xeCJKsetup{AutoFakeBold=true}
-    }{\relax}
+
+% \ifdefstring{\ELEGANT@lang}{cn}{
+%   \ifdefstring{\ELEGANT@chinesefont}{founder}{
+%     \RequirePackage[UTF8, scheme=plain, fontset=none]{ctex}
+%     \setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong-Z01}
+%     \setCJKsansfont[BoldFont={FZHei-B01}]{FZKai-Z03}
+%     \setCJKmonofont[BoldFont={FZHei-B01}]{FZFangSong-Z02}
+%     \setCJKfamilyfont{zhsong}{FZShuSong-Z01}
+%     \setCJKfamilyfont{zhhei}{FZHei-B01}
+%     \setCJKfamilyfont{zhkai}[BoldFont={FZHei-B01}]{FZKai-Z03}
+%     \setCJKfamilyfont{zhfs}[BoldFont={FZHei-B01}]{FZFangSong-Z02}
+%     \newcommand*{\songti}{\CJKfamily{zhsong}}
+%     \newcommand*{\heiti}{\CJKfamily{zhhei}}
+%     \newcommand*{\kaishu}{\CJKfamily{zhkai}}
+%     \newcommand*{\fangsong}{\CJKfamily{zhfs}}}{\relax}
   
-  \AfterEndPreamble{
-    \setlength\parindent{2\ccwd}}
-}{\relax}
+%   \ifdefstring{\ELEGANT@chinesefont}{nofont}{
+%     \RequirePackage[UTF8,scheme=plain,fontset=none]{ctex}
+%     \xeCJKsetup{AutoFakeBold=true}
+%     }{\relax}
+
+%   \ifdefstring{\ELEGANT@chinesefont}{ctexfont}{
+%     \RequirePackage[UTF8,scheme=plain]{ctex}
+%     \xeCJKsetup{AutoFakeBold=true}
+%     }{\relax}
+  
+%   \AfterEndPreamble{
+%     \setlength\parindent{2\ccwd}}
+% }{\relax}
