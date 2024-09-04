@@ -1,44 +1,35 @@
-\documentclass[leqno, lang = cn, theme = Fresh Green, fleqn, font = founder]{elegantbook-l3}
-
-
-
-\ElegantCoverInfo{%
-  title = {ElegantBook：优美的 \LaTeX{} 书籍模板},
-  subtitle = {Elegant\LaTeX{} 经典之作},
-  cover image = { cover.jpg },
-  logo image = {logo-blue},
-  author = 郭李军,
-  institute = ElegantBook Program,
-  version = v1.0,
-  date = 2023/10/01,
-  extrainfo = 一句话hahhahaha 
-}
+\documentclass[leqno, lang = cn, theme = Techno Blue, fleqn, font = founder, ]{elegantbook-l3}
 
 \usepackage{amsmath, amssymb, array}
 
 
 \usepackage{lipsum, zhlipsum}
 
-\begin{document}
-\let\cleardoublepage\relax
 
+
+
+
+
+\begin{document}
+
+
+\ElegantCoverInfo{%
+  title = {Elegant\ Book},
+  subtitle = {ElegantBook：优美的 \LaTeX{} 书籍模板},
+  cover image = { cover.jpg },
+  logo image = {logo-blue},
+  author = Ljguo<ljguo1020@gmail.com>,
+  institute = ElegantBook Program,
+  version = v1.0,
+  date = 2023/10/01,
+  extrainfo = {注意：本模板自 2023 年 1 月 1 日开始，不再更新和维护！}
+}
 
 \maketitle
 
 
-\ElegantCoverInfo{%
-  cover image = { cover-1.jpg },
-  title = {Elegant\ Book},
-  subtitle = {Elegant\ \LaTeX\ Template},
-  author = {Ljguo<ljguo1020@gmail.com>},
-  institute = {ElegantBook\ Program}
-}
+\chapter{如何入门使用 ElegantBook}
 
-
-\maketitle[Skyrmion]
-
-
-\scshape
 \lipsum[1]
 
 \zhlipsum[1]

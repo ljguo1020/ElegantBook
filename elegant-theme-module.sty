@@ -47,7 +47,10 @@
       }
   }
 
-
+\cs_new_protected_nopar:Npn \elegant_use_color:n #1 
+  {
+    elegant_#1_color
+  }
 
 \cs_new_protected_nopar:Npn \elegant_declare_theme:nn #1#2
   {
@@ -55,9 +58,9 @@
     {
       \prop_set_from_keyval:Nn \l__elegant_colors_prop { #2 }
       \prop_map_inline:Nn \l__elegant_colors_prop 
-      {
-        \exp_last_unbraced:Nno \elegant_declare_color:nnn { ##1 }{ ##2 }
-      }
+        {
+          \exp_last_unbraced:Nno \elegant_declare_color:nnn { ##1 }{ ##2 }
+        }
       
     }
     \clist_gput_right:Nn \g__elegant_theme_clist { #1 }
@@ -83,10 +86,10 @@
     chapter      =   {RGB}{ 60,  113, 183 },
     section      =   {RGB}{ 60,  113, 183 },
     subsection   =   {RGB}{ 60,  113, 183 },
-    definition   =   {RGB}{ 0,   166, 82  },
-    cover        =   {RGB}{ 0,   166, 82  },
-    exercise     =   {RGB}{ 0,   166, 82  },
-    problem      =   {RGB}{ 0,   166, 82  },
+    definition   =   {RGB}{ 32,  178, 170 },
+    cover        =   {RGB}{ 32,  178, 170 },
+    exercise     =   {RGB}{ 32,  178, 170 },
+    problem      =   {RGB}{ 32,  178, 170 },
     theorem      =   {RGB}{ 255, 134, 24  },
     lemma        =   {RGB}{ 255, 134, 24  },
     corollary    =   {RGB}{ 255, 134, 24  },

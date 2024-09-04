@@ -6,6 +6,8 @@
 \clist_new:N \g__elegant_language_clist
 
 
+\prop_new:N \l__elegant_names_prop
+
 \msg_new:nnn { elegant }{ not support language }
   {
     The~language~`#1'~is~not~support. \\
@@ -38,10 +40,25 @@
 
 \cs_new_protected_nopar:Npn \elegant_define_name:nn #1#2
   {
-    \tl_set:cn { elegant_#1_name } { #2 }
+    \tl_set:cn { l__elegant_#1_name } { #2 }
+  }
+
+\cs_new_protected_nopar:Npn \elegant_define_name:n #1
+  {
+    \prop_set_from_keyval:Nn \l__elegant_names_prop { #1 }
+    \prop_map_inline:Nn \l__elegant_names_prop 
+      {
+        \elegant_define_name:nn { ##1 }{ ##2 }
+      }
   }
   
 \elegant_declare_language:nn { cn }
   {
-    \elegant_define_name:nn {part} {章}
+    \RequirePackage[UTF8, fontset=none]{ctex}
+    \elegant_define_name:n 
+      {
+        chapter / before  = 第,
+        chapter / after = 章
+      }
+
   }

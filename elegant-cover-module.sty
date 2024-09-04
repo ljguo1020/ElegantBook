@@ -73,7 +73,7 @@
       \fill[ elegant_cover_color ] ([yshift = -.8\paperwidth]current~page.north~west) rectangle ++ (\paperwidth, -0.5in);
       \node[anchor = west, font = \Huge\bfseries] at ([shift = {(2em, -.8\paperwidth - 1.2in)}]current~page.north~west) {\elegant_use_cover_info:n { title }};
       \node[anchor = west, font = \Large\bfseries] at ([shift = {(2.5em, -.8\paperwidth - 1.8in)}]current~page.north~west) {\elegant_use_cover_info:n { subtitle }};
-      \node[anchor = north~west, text = darkgray, align = left] at ([shift = {(3.7em, -.8\paperwidth - 2.1in)}]current~page.north~west) {
+      \node[anchor = north~west, text = darkgray, align = left, font = \linespread{1.5}\selectfont] at ([shift = {(3.7em, -.8\paperwidth - 2.1in)}]current~page.north~west) {
         \textit{作者}:~\elegant_use_cover_info:n { author } \\
         \textit{组织}:~\elegant_use_cover_info:n { institute } \\
         \textit{时间}:~\elegant_use_cover_info:n { date } \\

@@ -11,24 +11,6 @@
 \LoadClass{book}
 
 
-
-
-
-
-\RequirePackage{geometry, tikz}
-
-\graphicspath{{./figure/}}
-\geometry{
-  a4paper,
-  top=25.4mm, bottom=25.4mm,
-  left=20mm, right=20mm,
-  headheight=2.17cm,
-  headsep=4mm,
-  footskip=12mm
-}
-
-
-
 \cs_new_protected_nopar:Npn \elegant_load_moudle:n #1 
   {
     \RequirePackage{elegant-#1-module}
@@ -72,7 +54,7 @@
     \tl_gput_right:NV \l__elegant_base_class_options_tl \l_keys_key_str
   }
   {
-    \exp_args:NNx \tl_gput_right:Nn \l__elegant_base_class_options_tl { \l_keys_key_str = \exp_not:n {#1} }
+    \exp_args:NNx \tl_gput_right:Nn \l__elegant_base_class_options_tl { \exp_not:N \l_keys_key_str = \exp_not:n {#1} }
   }
 }
 
@@ -88,5 +70,30 @@
 \PassOptionsToClass \l__elegant_base_class_options_tl { book }
 
 
+
+
+
+\RequirePackage{geometry, tikz}
+
+\graphicspath{{./figure/}}
+\geometry{
+  a4paper,
+  top = 25.4mm, 
+  bottom = 25.4mm,
+  left = 20mm, 
+  right = 20mm,
+  headheight = 2.17cm,
+  headsep = 4mm,
+  footskip = 12mm
+}
+
+
+
+\usepackage{showframe}
+
+\RequirePackage[explicit]{titlesec}
+\titleformat{\chapter}{}{}{0em}{
+  \hfill #1 \hfill
+}
 
 \endinput
