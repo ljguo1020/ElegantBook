@@ -54,17 +54,21 @@
     \clist_gput_right:Nn \g__elegant_cover_clist { #1 }
   }
 
-\RenewDocumentCommand\maketitle{O{default}}
+\AtBeginDocument
   {
-    \tl_if_exist:cTF { g_elegant_cover_#1_tl }
-    {
-      \tl_use:c { g_elegant_cover_#1_tl }
-    }
-    {
-      % error / message
-      \msg_error:nnn { elegant }{ undefined cover style } { #1 }
-    }
+    \RenewDocumentCommand\maketitle{O{default}}
+      {
+        \tl_if_exist:cTF { g_elegant_cover_#1_tl }
+        {
+          \tl_use:c { g_elegant_cover_#1_tl }
+        }
+        {
+          % error / message
+          \msg_error:nnn { elegant }{ undefined cover style } { #1 }
+        }
+      }
   }
+
 
 \elegant_declare_cover_style:nn { default }
   {

@@ -20,7 +20,7 @@
 \clist_new:N \g__elegant_theme_clist
 
 
-\tl_new:N \l__elegant_theme_tl 
+% \tl_new:N \g__elegant_theme_tl 
 
 \prop_new:N \l__elegant_colors_prop
 
@@ -47,7 +47,7 @@
       }
   }
 
-\cs_new_protected_nopar:Npn \elegant_use_color:n #1 
+\cs_new_nopar:Npn \elegant_use_color:n #1 
   {
     elegant_#1_color
   }
@@ -68,13 +68,13 @@
 
 \AtBeginDocument
   {
-    \tl_if_exist:cTF { g_elegant_theme_ \l__elegant_theme_tl _tl }
+    \tl_if_exist:cTF { g_elegant_theme_ \g__elegant_theme_tl _tl }
     {
-      \tl_use:c { g_elegant_theme_ \l__elegant_theme_tl _tl }
+      \tl_use:c { g_elegant_theme_ \g__elegant_theme_tl _tl }
     }
     {
       % error / message
-      \msg_error:nnx { elegant }{ not support theme } { \l__elegant_theme_tl }
+      \msg_error:nnx { elegant }{ not support theme } { \g__elegant_theme_tl }
     }
   }
 
@@ -83,9 +83,8 @@
 
 \elegant_declare_theme:nn { Techno~Blue }
   {
-    chapter      =   {RGB}{ 60,  113, 183 },
-    section      =   {RGB}{ 60,  113, 183 },
-    subsection   =   {RGB}{ 60,  113, 183 },
+    headline     =   {RGB}{ 60,  113, 183 },
+    structure    =   {RGB}{ 60,  113, 183 },
     definition   =   {RGB}{ 32,  178, 170 },
     cover        =   {RGB}{ 32,  178, 170 },
     exercise     =   {RGB}{ 32,  178, 170 },

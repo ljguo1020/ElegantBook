@@ -1,7 +1,7 @@
 \ProvideElegantMoudle{language}{ElegantLaTeX Language Moudle}
 
 
-\tl_new:N \l__elegant_language_tl 
+% \tl_new:N \g__elegant_language_tl 
 
 \clist_new:N \g__elegant_language_clist
 
@@ -27,13 +27,13 @@
   {
     \let \xeCJK@document@left@hook \relax
     \let \xeCJK@document@hook \relax
-    \tl_if_exist:cTF { g_elegant_language_ \l__elegant_language_tl _tl }
+    \tl_if_exist:cTF { g_elegant_language_ \g__elegant_language_tl _tl }
     {
-      \tl_use:c { g_elegant_language_ \l__elegant_language_tl _tl }
+      \tl_use:c { g_elegant_language_ \g__elegant_language_tl _tl }
     }
     {
       % error / message
-      \msg_error:nnx { elegant }{ not support language } { \l__elegant_language_tl }
+      \msg_error:nnx { elegant }{ not support language } { \g__elegant_language_tl }
     }
   }
 
@@ -51,7 +51,12 @@
         \elegant_define_name:nn { ##1 }{ ##2 }
       }
   }
-  
+
+\cs_new_nopar:Npn \elegant_use_name:n #1 
+  {
+    \tl_if_exist_use:c { l__elegant_#1_name }
+  }
+
 \elegant_declare_language:nn { cn }
   {
     \RequirePackage[UTF8, fontset=none]{ctex}

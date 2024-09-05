@@ -1,13 +1,23 @@
-\documentclass[leqno, lang = cn, theme = Techno Blue, fleqn, font = founder, ]{elegantbook-l3}
+\documentclass[
+  leqno, 
+  lang = cn, 
+  theme = Techno Blue, 
+  fleqn, 
+  font = founder, 
+  oneside,
+]{elegantbook-l3}
 
 \usepackage{amsmath, amssymb, array}
 
 
 \usepackage{lipsum, zhlipsum}
 
+\usepackage{showframe}
 
-
-
+\ElegantSetup{
+  tocdepth = 1,
+  secnumdepth = 4
+}
 
 
 \begin{document}
@@ -25,16 +35,19 @@
   extrainfo = {注意：本模板自 2023 年 1 月 1 日开始，不再更新和维护！}
 }
 
-\maketitle
+% \maketitle
 
+\tableofcontents
 
 \chapter{如何入门使用 ElegantBook}
 
-\lipsum[1]
+\section{如何入门使用 ElegantBook}
+\subsection{如何入门使用 ElegantBook}
+\subsubsection{如何入门使用 ElegantBook}
 
-\zhlipsum[1]
 
-
+\zhlipsum
+\lipsum
 \end{document}
 
 

@@ -1,6 +1,6 @@
 \ProvideElegantMoudle{font}{ElegantLaTeX Font Moudle}
 
-\tl_new:N \l__elegant_font_tl 
+% \tl_new:N \g__elegant_font_tl 
 
 \clist_new:N \g__elegant_font_clist
 
@@ -22,13 +22,13 @@
 
 \AtBeginDocument
   {
-    \tl_if_exist:cTF { g_elegant_font_ \l__elegant_font_tl _tl }
+    \tl_if_exist:cTF { g_elegant_font_ \g__elegant_font_tl _tl }
     {
-      \tl_use:c { g_elegant_font_ \l__elegant_font_tl _tl }
+      \tl_use:c { g_elegant_font_ \g__elegant_font_tl _tl }
     }
     {
       % error / message
-      \msg_error:nnx { elegant }{ not support font } { \l__elegant_font_tl }
+      \msg_error:nnx { elegant }{ not support font } { \g__elegant_font_tl }
     }
   }
 
