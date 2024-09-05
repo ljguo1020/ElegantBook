@@ -12,7 +12,7 @@
 
 \usepackage{lipsum, zhlipsum}
 
-\usepackage{showframe}
+% \usepackage{showframe}
 
 \ElegantSetup{
   tocdepth = 1,
@@ -35,9 +35,20 @@
   extrainfo = {注意：本模板自 2023 年 1 月 1 日开始，不再更新和维护！}
 }
 
-% \maketitle
+\ElegantCoverInfo{
+  zh-title = 一个中文长标题长标题标题题,
+  en-title =  A Long Long Long Long Long Long Long Title,
+  email = ljguo1020@gmail.com,
+  author = Ljguo,
+  date = \zhtoday
+}
+
+\maketitle[mono]
 
 \tableofcontents
+
+
+
 
 \chapter{如何入门使用 ElegantBook}
 

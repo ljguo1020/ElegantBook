@@ -102,6 +102,33 @@
     \end{tikzpicture}
   }
 
+\elegant_declare_cover_style:nn { mono }
+  {
+    \begin{center}
+      \vfill
+      \bfseries
+      \vspace*{2cm}
+      {\color{ \elegant_use_color:n {cover} } \rule{0.9\textwidth}{2pt}}\\[3ex]
+      {\Huge \elegant_use_cover_info:n {zh-title} }\\
+      \vspace*{5ex}
+      {\Huge \elegant_use_cover_info:n {en-title} }\\
+      { \color{ \elegant_use_color:n {cover} }  \rule{0.9\textwidth}{2pt}}\\ 
+      \vfill
+      \includegraphics[width=0.35\textwidth]{logo-blue}
+      \vfill
+      \end{center}
+    \begin{flushright}
+    \normalfont
+    {\color{ \elegant_use_color:n {cover} } \rule{0.45\textwidth}{1pt}}\\
+    作者：\elegant_use_cover_info:n { author }\\
+    时间：\elegant_use_cover_info:n { date }\\
+    邮箱：\elegant_use_cover_info:n { email }\\
+    {\color{ \elegant_use_color:n {cover} } \rule{0.45\textwidth}{1pt}}
+    \end{flushright}    
+  }
+
+
+
 \NewDocumentCommand\ElegantDeclareCoverStyle{ m+m }
   { \elegant_declare_cover_style:nn { #1 }{ #2 } }
 
