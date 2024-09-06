@@ -1,19 +1,33 @@
 \def\elegant@date{2024/06/17}
 \def\elegant@version{1.0}
 
-\def\ProvideElegantMoudle#1#2{%
-  \ProvidesExplPackage{elegant-#1-module}{\elegant@date}{\elegant@version}{#2}%
+\ExplSyntaxOn
+\NewDocumentCommand\ProvideElegantModule{ m }
+{
+  \ProvidesExplFile{elegant-#1-module.code.tex}{\elegant@date}{\elegant@version}
+  {ElegantLaTeX~ \text_titlecase_all:n{ #1 } ~Module}
 }
+\ExplSyntaxOff
+
 
 \ProvidesExplClass{elegantbook-l3}{\elegant@date}{\elegant@version}{ElegantBook document class}
 
 
+\msg_new:nnn { elegant } { not found module }
+{
+  The~Elegant~module~`#1'~not~found.
+}
 
 
-
-\cs_new_protected_nopar:Npn \elegant_load_moudle:n #1 
+\cs_new_protected_nopar:Npn \elegant_load_module:n #1 
   {
-    \RequirePackage{elegant-#1-module}
+    \clist_map_inline:nn { #1 }
+    {
+      \file_if_exist_input:nF { ./module/elegant-##1-module.code.tex }
+      {
+        \msg_error:nnn { elegant } { not found module } { ##1 }
+      }
+    }
   }
 
 \prop_gput:Nnn \g_msg_module_type_prop { elegant } { Class }
@@ -87,21 +101,17 @@
 
 
 
-\elegant_load_moudle:n { language }
+\elegant_load_module:n { language }
 
-\elegant_load_moudle:n { theme }
+\elegant_load_module:n { theme }
 
-\elegant_load_moudle:n { cover }
+\elegant_load_module:n { cover }
 
-\elegant_load_moudle:n { font }
+\elegant_load_module:n { font }
 
-\elegant_load_moudle:n { core }
+\elegant_load_module:n { core }
 
-
-
-
-
-
+\elegant_load_module:n { theorem }
 
 
 
