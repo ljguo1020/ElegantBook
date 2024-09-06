@@ -1,0 +1,92 @@
+\ProvideElegantMoudle{core}{ElegantLaTeX Core Moudle}
+
+\RequirePackage{geometry, tikz}
+
+\graphicspath{{./figure/}}
+\geometry{
+  a4paper,
+  top = 25.4mm, 
+  bottom = 25.4mm,
+  left = 20mm, 
+  right = 20mm,
+  headheight = 2.17cm,
+  headsep = 4mm,
+  footskip = 12mm
+}
+
+
+\RequirePackage[explicit]{titlesec}
+
+% #1 name #2 format
+\cs_new_protected_nopar:Npn \__elegant_title_format:nn #1#2 
+  {
+    \exp_args:Nc \titleformat{#1}{}{}{0em}
+      {
+        #2
+        \color{ \elegant_use_color:n { headline } } 
+        \ifttl@label
+          \elegant_use_name:n { #1 / before } 
+          \elegant_use_name:n { #1 / number } 
+          \elegant_use_name:n { #1 / after }
+          \;\; 
+        \fi:
+        ##1 
+      }
+  }
+
+
+\titlespacing{\chapter}{0pt}{-20pt}{1.3\baselineskip}
+
+\__elegant_title_format:nn { chapter }      { \centering\bfseries\LARGE }
+\__elegant_title_format:nn { section }      { \bfseries\Large }
+\__elegant_title_format:nn { subsection }   { \bfseries\large }
+\__elegant_title_format:nn { subsubsection }{ \bfseries\large }
+
+
+\RequirePackage{fancyhdr}
+\fancyhf{}
+
+\fancyfoot[c]{\color{ \elegant_use_color:n { structure } }\small\thepage}
+\if@twoside
+  \fancyhead[EL]{\color{ \elegant_use_color:n { structure } }\small\leftmark}
+  \fancyhead[OR]{\color{ \elegant_use_color:n { structure } }\small\rightmark}
+\else
+  \fancyhead[R]{\color{ \elegant_use_color:n { structure } }\small\rightmark}
+\fi
+
+\RenewDocumentCommand{\headrule}{}{\color{ \elegant_use_color:n { structure } }\hrule width\textwidth}
+\pagestyle{fancy}
+\RenewDocumentCommand{\headrulewidth}{}{1pt}
+\fancypagestyle{plain}{\RenewDocumentCommand{\headrulewidth}{}{0pt}\fancyhf{}\RenewDocumentCommand{\headrule}{}{}}
+\RenewDocumentCommand{\sectionmark}{ m }{\markright{
+  \elegant_use_name:n { section / before } 
+  \elegant_use_name:n { section / number } 
+  \elegant_use_name:n { section / after }  
+\, #1}{}}
+\RenewDocumentCommand{\chaptermark}{ m }{\markboth{
+  \elegant_use_name:n { chapter / before } 
+  \elegant_use_name:n { chapter / number } 
+  \elegant_use_name:n { chapter / after }  
+\, #1}{}}
+
+
+
+\RequirePackage{hyperref}
+\hypersetup{
+  breaklinks,
+  unicode,
+  linktoc = all,
+  bookmarksnumbered = true,
+  bookmarksopen = true,
+  pdfkeywords = {ElegantBook, elegantlatex.top},
+  colorlinks,
+  linkcolor= \elegant_use_color:n { headline },
+  citecolor= \elegant_use_color:n { headline },
+  urlcolor= \elegant_use_color:n { headline },
+  plainpages = false,
+  pdfstartview = FitH,
+  pdfborder = {0 0 0},
+}
+
+
+\endinput

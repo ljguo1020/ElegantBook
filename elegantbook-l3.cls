@@ -74,17 +74,6 @@
 
 \exp_args:NNV \LoadClass[\g__elegant_base_class_options_clist]{book}
 
-
-\elegant_load_moudle:n { language }
-
-\elegant_load_moudle:n { theme }
-
-\elegant_load_moudle:n { cover }
-
-\elegant_load_moudle:n { font }
-
-
-
 \keys_define:nn { elegant / option }
   {
     tocdepth .int_set:N = \c@tocdepth,
@@ -98,100 +87,23 @@
 
 
 
+\elegant_load_moudle:n { language }
 
-\RequirePackage{geometry, tikz}
+\elegant_load_moudle:n { theme }
 
-\graphicspath{{./figure/}}
-\geometry{
-  a4paper,
-  top = 25.4mm, 
-  bottom = 25.4mm,
-  left = 20mm, 
-  right = 20mm,
-  headheight = 2.17cm,
-  headsep = 4mm,
-  footskip = 12mm
-}
+\elegant_load_moudle:n { cover }
+
+\elegant_load_moudle:n { font }
+
+\elegant_load_moudle:n { core }
 
 
 
-\RequirePackage[explicit]{titlesec}
-\titleformat{\chapter}{}{}{0em}{
-  \centering
-  \color{\elegant_use_color:n{headline}} \bfseries\LARGE
-  \elegant_use_name:n { chapter / before } \chinese{chapter} \elegant_use_name:n { chapter / after }\;\; #1 
-}
-
-\titleformat{name = \chapter, numberless}{}{}{0em}{
-  \centering
-  \color{\elegant_use_color:n{headline}} \bfseries\LARGE #1 
-}
-
-\titlespacing{\chapter}{0pt}{-20pt}{1.3\baselineskip}
-
-
-\titleformat{\section}{}{}{0em}{
-  \color{\elegant_use_color:n{headline}} \bfseries\Large \thesection\;\; #1 
-}
-
-\titleformat{name = \section, numberless}{}{}{0em}{
-  \color{\elegant_use_color:n{headline}} \bfseries\Large #1 
-}
-
-\titleformat{\subsection}{}{}{0em}{
-  \color{\elegant_use_color:n{headline}} \bfseries\large \thesubsection\;\; #1 
-}
-
-\titleformat{name = \subsection, numberless}{}{}{0em}{
-  \color{\elegant_use_color:n{headline}} \bfseries\large #1 
-}
-
-\titleformat{\subsubsection}{}{}{0em}{
-  \color{\elegant_use_color:n{headline}} \bfseries\large \thesubsubsection\;\; #1 
-}
-
-\titleformat{name = \subsubsection, numberless}{}{}{0em}{
-  \color{\elegant_use_color:n{headline}} \bfseries\large #1 
-}
-
-
-\RequirePackage{fancyhdr}
-\fancyhf{}
-
-
-\fancyfoot[c]{\color{ \elegant_use_color:n { structure } }\small\thepage}
-\if@twoside
-  \fancyhead[EL]{\color{ \elegant_use_color:n { structure } }\small\leftmark}
-  \fancyhead[OR]{\color{ \elegant_use_color:n { structure } }\small\rightmark}
-\else
-  \fancyhead[R]{\color{ \elegant_use_color:n { structure } }\small\rightmark}
-\fi
-
-\RenewDocumentCommand{\headrule}{}{\color{ \elegant_use_color:n { structure } }\hrule width\textwidth}
-\pagestyle{fancy}
-\RenewDocumentCommand{\headrulewidth}{}{1pt}
-\fancypagestyle{plain}{\RenewDocumentCommand{\headrulewidth}{}{0pt}\fancyhf{}\RenewDocumentCommand{\headrule}{}{}}
-\RenewDocumentCommand{\sectionmark}{ m }{\markright{\thesection\, #1}{}}
-\RenewDocumentCommand{\chaptermark}{ m }{\markboth{\thechapter\, #1}{}}
 
 
 
-\RequirePackage{hyperref}
-\hypersetup{
-  breaklinks,
-  unicode,
-  linktoc = all,
-  bookmarksnumbered = true,
-  bookmarksopen = true,
-  pdfkeywords = {ElegantBook, elegantlatex.top},
-  colorlinks,
-  linkcolor= \elegant_use_color:n { headline },
-  citecolor= \elegant_use_color:n { headline },
-  urlcolor= \elegant_use_color:n { headline },
-  plainpages = false,
-  pdfstartview = FitH,
-  pdfborder = {0 0 0},
-  linktocpage
-}
+
+
+
 
 \endinput

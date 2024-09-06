@@ -4,7 +4,7 @@
   theme = Techno Blue, 
   fleqn, 
   font = founder, 
-  oneside,
+  twoside,
 ]{elegantbook-l3}
 
 \usepackage{amsmath, amssymb, array}
@@ -12,13 +12,14 @@
 
 \usepackage{lipsum, zhlipsum}
 
-% \usepackage{showframe}
+\usepackage{showframe}
 
 \ElegantSetup{
   tocdepth = 1,
   secnumdepth = 4
 }
 
+% \usepackage{multicol}
 
 \begin{document}
 
@@ -35,15 +36,15 @@
   extrainfo = {注意：本模板自 2023 年 1 月 1 日开始，不再更新和维护！}
 }
 
-\ElegantCoverInfo{
-  zh-title = 一个中文长标题长标题标题题,
-  en-title =  A Long Long Long Long Long Long Long Title,
-  email = ljguo1020@gmail.com,
-  author = Ljguo,
-  date = \zhtoday
-}
+% \ElegantCoverInfo{
+%   zh-title = 一个中文长标题长标题标题题,
+%   en-title =  A Long Long Long Long Long Long Long Title,
+%   email = ljguo1020@gmail.com,
+%   author = Ljguo,
+%   date = \zhtoday
+% }
 
-\maketitle[mono]
+\maketitle[default]
 
 \tableofcontents
 
