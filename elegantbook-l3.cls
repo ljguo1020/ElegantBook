@@ -5,7 +5,7 @@
 \NewDocumentCommand\ProvideElegantModule{ m }
 {
   \ProvidesExplFile{elegant-#1-module.code.tex}{\elegant@date}{\elegant@version}
-  {ElegantLaTeX~ \text_titlecase_all:n{ #1 } ~Module}
+  {ElegantLaTeX~ \text_titlecase:n{ #1 } ~Module}
 }
 \ExplSyntaxOff
 
