@@ -1,7 +1,8 @@
 \documentclass[
   leqno, 
   lang = cn, 
-  theme = Techno Blue, 
+  % theme = Techno Blue, 
+  theme = Fresh Green,
   fleqn, 
   font = founder, 
   twoside,
@@ -19,7 +20,10 @@
   secnumdepth = 4
 }
 
-% \usepackage{multicol}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+
+% \usepackage{ctex}
 
 \begin{document}
 
@@ -57,9 +61,43 @@
 \subsection{如何入门使用 ElegantBook}
 \subsubsection{如何入门使用 ElegantBook}
 
+\begin{theorem}[定理类环境均有带星号的版本]\label{aaa}
+  aaaa
+\end{theorem}
 
-\zhlipsum
-\lipsum
+\begin{definition}
+  aaaa
+\end{definition}
+
+\begin{postulate}
+  aaaa
+\end{postulate}
+
+\begin{postulate}
+  aaaa
+\end{postulate}
+
+
+\begin{axiom}
+  aaaa
+\end{axiom}
+
+\begin{corollary}
+  aaaa
+\end{corollary}
+
+\begin{lemma}
+  aaaa
+\end{lemma}
+
+\begin{proposition}
+  aaaa
+\end{proposition}
+% \zhlipsum
+% \lipsum
+
+\ref{aaa}
+
 \end{document}
 
 

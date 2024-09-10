@@ -1,16 +1,16 @@
-\ProvideElegantModule{theme}
+\elegant_provide_module:n{theme}
 
 
 \RequirePackage{xcolor}
 
-\msg_new:nnn { elegant }{ not support theme }
+\elegant_msg_new:nn { not support theme }
   {
     The~theme~`#1'~is~not~support. \\
     Please~select~one~of~the~following~themes. \\
     \clist_use:Nn \g__elegant_theme_clist {,~} 
   }
 
-\msg_new:nnn { elegant }{ undefined color }
+\elegant_msg_new:nn { undefined color }
   {
     The~Elegant~color~`#1'~is~undefined.\\
     Default~color~used.
@@ -66,7 +66,7 @@
     \clist_gput_right:Nn \g__elegant_theme_clist { #1 }
   }
 
-\AtBeginDocument
+\AddToHook{begindocument/before}
   {
     \tl_if_exist:cTF { g_elegant_theme_ \g__elegant_theme_tl _tl }
     {
@@ -74,7 +74,7 @@
     }
     {
       % error / message
-      \msg_error:nnx { elegant }{ not support theme } { \g__elegant_theme_tl }
+      \elegant_msg_error:nx { not support theme } { \g__elegant_theme_tl }
     }
   }
 
@@ -97,9 +97,8 @@
 
 \elegant_declare_theme:nn { Fresh~Green }
   {
-    chapter      =   {RGB}{ 0,   120, 2   },
-    section      =   {RGB}{ 0,   120, 2   },
-    subsection   =   {RGB}{ 0,   120, 2   },
+    headline     =   {RGB}{ 60,  113, 183 },
+    structure    =   {RGB}{ 60,  113, 183 },
     cover        =   {RGB}{ 0,   120, 2   },
     definition   =   {RGB}{ 0,   120, 2   },
     exercise     =   {RGB}{ 0,   120, 2   },
@@ -107,7 +106,9 @@
     theorem      =   {RGB}{ 230, 90,  7   },
     lemma        =   {RGB}{ 230, 90,  7   },
     corollary    =   {RGB}{ 230, 90,  7   },
-    proposition  =   {RGB}{ 0,   160, 152 }
+    proposition  =   {RGB}{ 0,   160, 152 },
+    postulate    =   {RGB}{ 0,   160, 152 },
+    axiom        =   {RGB}{ 0,   160, 152 },
   }
 
 \elegant_declare_theme:nn { Polar~Blue }

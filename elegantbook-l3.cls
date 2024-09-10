@@ -2,21 +2,30 @@
 \def\elegant@version{1.0}
 
 \ExplSyntaxOn
-\NewDocumentCommand\ProvideElegantModule{ m }
-{
-  \ProvidesExplFile{elegant-#1-module.code.tex}{\elegant@date}{\elegant@version}
-  {ElegantLaTeX~ \text_titlecase:n{ #1 } ~Module}
-}
+\cs_new_protected_nopar:Npn \elegant_provide_module:n #1
+  {
+    \ProvidesExplFile{elegant-#1-module.code.tex}{\elegant@date}{\elegant@version}
+    {ElegantLaTeX~ \text_titlecase:n { #1 } ~Module}
+  }
 \ExplSyntaxOff
 
 
 \ProvidesExplClass{elegantbook-l3}{\elegant@date}{\elegant@version}{ElegantBook document class}
 
+\cs_new_protected:Npn \elegant_msg_new:nn #1#2 
+  { \msg_new:nnn { elegant } { #1 } { #2 } }
 
-\msg_new:nnn { elegant } { not found module }
-{
-  The~Elegant~module~`#1'~not~found.
-}
+\cs_new_protected:Npn \elegant_msg_error:nn #1#2
+  { \msg_error:nnn { elegant } { #1 } { #2 } }
+
+\cs_generate_variant:Nn \elegant_msg_error:nn { nx }
+
+
+
+\elegant_msg_new:nn { not found module }
+  {
+    The~Elegant~module~`#1'~not~found.
+  }
 
 
 \cs_new_protected_nopar:Npn \elegant_load_module:n #1 
@@ -25,7 +34,7 @@
     {
       \file_if_exist_input:nF { ./module/elegant-##1-module.code.tex }
       {
-        \msg_error:nnn { elegant } { not found module } { ##1 }
+        \elegant_msg_error:nn { not found module } { ##1 }
       }
     }
   }
@@ -60,6 +69,8 @@
     theme .initial:n = {Techno~Blue},
     font .tl_set:N = \g__elegant_font_tl,
     font .initial:n = { founder },
+    mode .tl_set:N = \g__elegant_theorem_mode_tl,
+    mode .initial:n = { fancy },
     unknown.code:n = \__elegant_parse_unknown_option:n { #1 }
   }
 

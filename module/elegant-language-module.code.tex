@@ -1,4 +1,4 @@
-\ProvideElegantModule{language}
+\elegant_provide_module:n{language}
 
 
 % \tl_new:N \g__elegant_language_tl 
@@ -8,7 +8,7 @@
 
 \prop_new:N \l__elegant_names_prop
 
-\msg_new:nnn { elegant }{ not support language }
+\elegant_msg_new:nn { not support language }
   {
     The~language~`#1'~is~not~support. \\
     Please~select~one~of~the~following~languages. \\
@@ -23,7 +23,7 @@
   }
 
 
-\AtBeginDocument
+\AddToHook{begindocument/before}
   {
     \let \xeCJK@document@left@hook \relax
     \let \xeCJK@document@hook \relax
@@ -33,7 +33,7 @@
     }
     {
       % error / message
-      \msg_error:nnx { elegant }{ not support language } { \g__elegant_language_tl }
+      \elegant_msg_error:nx { not support language } { \g__elegant_language_tl }
     }
   }
 
@@ -63,11 +63,22 @@
     \elegant_define_name:n 
       {
         chapter / before  = 第,
-        chapter / after = 章,
-        chapter / number = \chinese{chapter},
+          chapter / after = 章,
+          chapter / number = \chinese{chapter},
         section / number = \thesection,
         subsection / number = \thesubsection,
-        subsubsection / number = \thesubsubsection
+        subsubsection / number = \thesubsubsection,
+        theorem = 定理,
+          theorem / icon = $\heartsuit$,
+          theorem / number = \thetheorem,
+        definition = 定义,
+          definition / icon = $\clubsuit$,
+        postulate = 公设,
+        axiom = 公理,
+        corollary = 推论,
+        lemma = 引理,
+          lemma / icon = $\spadesuit$,
+        proposition = 命题
       }
   }
 

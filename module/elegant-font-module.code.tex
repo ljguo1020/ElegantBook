@@ -1,11 +1,11 @@
-\ProvideElegantModule{font}
+\elegant_provide_module:n{font}
 
 % \tl_new:N \g__elegant_font_tl 
 
 \clist_new:N \g__elegant_font_clist
 
 
-\msg_new:nnn { elegant }{ not support font }
+\elegant_msg_new:nn { not support font }
   {
     The~font~option~`#1'~is~not~support. \\
     Please~select~one~of~the~following~font~options. \\
@@ -20,7 +20,7 @@
   }
 
 
-\AtBeginDocument
+\AddToHook{begindocument/before}
   {
     \tl_if_exist:cTF { g_elegant_font_ \g__elegant_font_tl _tl }
     {
@@ -28,7 +28,7 @@
     }
     {
       % error / message
-      \msg_error:nnx { elegant }{ not support font } { \g__elegant_font_tl }
+      \elegant_msg_error:nx { not support font } { \g__elegant_font_tl }
     }
   }
 

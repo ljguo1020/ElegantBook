@@ -1,14 +1,14 @@
-\ProvideElegantModule{cover}
+\elegant_provide_module:n{cover}
 
 
 \clist_new:N \g__elegant_cover_clist
 
-\msg_new:nnn { elegant }{ undefined cover info }
+\elegant_msg_new:nn { undefined cover info }
   {
     The~Elegant~cover~info~`#1'~is~undefined.\\
   }
 
-\msg_new:nnn { elegant }{ undefined cover style }
+\elegant_msg_new:nn { undefined cover style }
   {
     The~Elegant~cover~style~`#1'~is~undefined.\\
     Please~select~one~of~the~following~styles. \\
@@ -37,7 +37,7 @@
       \tl_use:c { l__elegant_cover_info_#1_tl }
     }
     {
-      \msg_error:nnn { elegant }{ undefined cover info }{ #1 }
+      \elegant_msg_error:nn { undefined cover info }{ #1 }
     }
   }
 
@@ -54,7 +54,7 @@
     \clist_gput_right:Nn \g__elegant_cover_clist { #1 }
   }
 
-\AtBeginDocument
+\AddToHook{begindocument/before}
   {
     \RenewDocumentCommand\maketitle{O{default}}
       {
@@ -64,7 +64,7 @@
         }
         {
           % error / message
-          \msg_error:nnn { elegant }{ undefined cover style } { #1 }
+          \elegant_msg_error:nn { undefined cover style } { #1 }
         }
       }
   }
