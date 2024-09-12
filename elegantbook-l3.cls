@@ -32,7 +32,7 @@
   {
     \clist_map_inline:nn { #1 }
     {
-      \file_if_exist_input:nF { ./module/elegant-##1-module.code.tex }
+      \file_if_exist_input:nF { elegant-##1-module.code.tex }
       {
         \elegant_msg_error:nn { not found module } { ##1 }
       }
@@ -64,13 +64,22 @@
 \keys_define:nn { elegant / classoption }
   {
     lang .tl_set:N = \g__elegant_language_tl,
-    lang .initial:n = cn,
+      lang .initial:n = cn,
     theme .tl_set:N = \g__elegant_theme_tl,
-    theme .initial:n = {Techno~Blue},
+      theme .initial:n = {Techno~Blue},
     font .tl_set:N = \g__elegant_font_tl,
-    font .initial:n = { founder },
+      font .initial:n = { founder },
     mode .tl_set:N = \g__elegant_theorem_mode_tl,
-    mode .initial:n = { fancy },
+      mode .initial:n = { fancy },
+    tocdepth .int_set:N = \g__elegant_tocdepth_int,
+      tocdepth .initial:n = 1,
+    secnumdepth .int_set:N = \g__elegant_secnumdepth_int,
+      secnumdepth .initial:n = 5,
+    usesamecnt .bool_set:N = \g__elegant_usesamecnt_bool,
+      usesamecnt .initial:n = false,
+      usesamecnt .default:n = true,
+    thmcnt .tl_set:N = \g__elegant_thmcnt_tl,
+      thmcnt .initial:n = { chapter },
     unknown.code:n = \__elegant_parse_unknown_option:n { #1 }
   }
 
@@ -96,20 +105,13 @@
     \ProcessKeysOptions{ elegant / classoption }
   }
 
-
-\exp_args:NNV \LoadClass[\g__elegant_base_class_options_clist]{book}
-
-\keys_define:nn { elegant / option }
+\AddToHook{ class / after }
   {
-    tocdepth .int_set:N = \c@tocdepth,
-    tocdepth .initial:n = 1,
-    secnumdepth .int_set:N = \c@secnumdepth,
-    secnumdepth .initial:n = 4,
+    \int_gset_eq:NN \c@tocdepth    \g__elegant_tocdepth_int 
+    \int_gset_eq:NN \c@secnumdepth \g__elegant_secnumdepth_int 
   }
 
-\NewDocumentCommand{\ElegantSetup}{m}
-  { \keys_set:nn { elegant / option } { #1 } }
-
+\exp_args:NNV \LoadClass[\g__elegant_base_class_options_clist]{book}
 
 
 \elegant_load_module:n { language }

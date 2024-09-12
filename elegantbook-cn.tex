@@ -3,9 +3,14 @@
   lang = cn, 
   % theme = Techno Blue, 
   theme = Fresh Green,
-  fleqn, 
+  % fleqn, 
   font = founder, 
   twoside,
+  % tocdepth = 5, 
+  % secnumdepth = 4,
+  usesamecnt,
+  thmcnt = section,
+  mode = simple
 ]{elegantbook-l3}
 
 \usepackage{amsmath, amssymb, array}
@@ -13,12 +18,9 @@
 
 \usepackage{lipsum, zhlipsum}
 
-\usepackage{showframe}
+% \usepackage{showframe}
 
-\ElegantSetup{
-  tocdepth = 1,
-  secnumdepth = 4
-}
+
 
 \usepackage{multicol}
 \usepackage{tcolorbox}
@@ -61,13 +63,23 @@
 \subsection{如何入门使用 ElegantBook}
 \subsubsection{如何入门使用 ElegantBook}
 
-\begin{theorem}[定理类环境均有带星号的版本]\label{aaa}
+\begin{theorem}[定理类环境均有带星号的版本]
   aaaa
+  \begin{equation}
+    a^2 + b^2 = c^2
+  \end{equation}
+  aaa asfasf text的阿斯顿 aaa asfasf text的阿斯顿 aaa asfasf text的阿斯顿 aaa asfasf text的阿斯顿 aaa 
 \end{theorem}
 
-\begin{definition}
+\lipsum[1-5]
+
+\begin{definition}\label{aaa}
   aaaa
 \end{definition}
+
+
+\lipsum[1-5]
+
 
 \begin{postulate}
   aaaa
@@ -93,6 +105,16 @@
 \begin{proposition}
   aaaa
 \end{proposition}
+
+\begin{proposition*}[aaaa]
+  aaaa
+\end{proposition*}
+
+\begin{proposition}
+  aaaa
+\end{proposition}
+
+
 % \zhlipsum
 % \lipsum
 

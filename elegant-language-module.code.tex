@@ -57,9 +57,16 @@
     \tl_if_exist_use:c { l__elegant_#1_name }
   }
 
+\prg_new_protected_conditional:Npnn \elegant_name_if_exist:n #1 {T, F, TF}
+  {
+    \tl_if_exist:cTF { l__elegant_#1_name }
+      \prg_return_true:
+      \prg_return_false:
+  }  
+
 \elegant_declare_language:nn { cn }
   {
-    \RequirePackage[UTF8, fontset=none]{ctex}
+    \RequirePackage[UTF8, fontset = none]{ctex}
     \elegant_define_name:n 
       {
         chapter / before  = 第,
@@ -70,10 +77,10 @@
         subsubsection / number = \thesubsubsection,
         theorem = 定理,
           theorem / icon = $\heartsuit$,
-          theorem / number = \thetheorem,
         definition = 定义,
           definition / icon = $\clubsuit$,
         postulate = 公设,
+          postulate / icon = $\Delta$,
         axiom = 公理,
         corollary = 推论,
         lemma = 引理,
