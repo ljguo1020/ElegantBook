@@ -18,18 +18,22 @@
 
 \cs_new_protected_nopar:Npn \elegant_declare_language:nn #1#2 
   {
+    \hook_new:n { elegant-module / language / #1 / before }
+		\hook_new:n { elegant-module / language / #1 / after }
     \tl_gset:cn { g_elegant_language_#1_tl } { #2 }
     \clist_gput_right:Nn \g__elegant_language_clist { #1 }
   }
 
 
-\AddToHook{begindocument/before}
+\hook_gput_code:nnn{begindocument/before}{.}
   {
     \let \xeCJK@document@left@hook \relax
     \let \xeCJK@document@hook \relax
     \tl_if_exist:cTF { g_elegant_language_ \g__elegant_language_tl _tl }
     {
+      \hook_use:n { elegant-module / language / \g__elegant_language_tl / before }
       \tl_use:c { g_elegant_language_ \g__elegant_language_tl _tl }
+      \hook_use:n { elegant-module / language / \g__elegant_language_tl / after }
     }
     {
       % error / message

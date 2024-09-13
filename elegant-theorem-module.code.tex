@@ -14,16 +14,21 @@
 
 \cs_new_protected_nopar:Npn \elegant_declare_theorem_mode:nn #1#2 
   {
+    % hooks
+		\hook_new:n { elegant-module / theorem / #1 / before }
+		\hook_new:n { elegant-module / theorem / #1 / after }
     \tl_gset:cn { g_elegant_theorem_mode_#1_tl } { #2 }
     \clist_gput_right:Nn \g__elegant_theorem_mode_clist { #1 }
   }
 
 
-\AddToHook{begindocument/before}
+\hook_gput_code:nnn{begindocument/before}{.}
   {
     \tl_if_exist:cTF { g_elegant_theorem_mode_ \g__elegant_theorem_mode_tl _tl }
     {
+			\hook_use:n { elegant-module / theorem / \g__elegant_theorem_mode_tl / before }
       \tl_use:c { g_elegant_theorem_mode_ \g__elegant_theorem_mode_tl _tl }
+			\hook_use:n { elegant-module / theorem / \g__elegant_theorem_mode_tl / after }
     }
     {
       % error / message

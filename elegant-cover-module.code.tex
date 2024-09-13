@@ -17,50 +17,47 @@
 
 
 
-\cs_new_protected_nopar:Npn \__elegant_declare_cover_info:nn #1#2 
-  {
-    \tl_set:cn { l__elegant_cover_info_#1_tl } { #2 }
-  }
 
 \prop_new:N \g__elegant_cover_info_prop 
 
-\cs_new_protected_nopar:Npn \__elegant_cover_info_handler:n #1 
+\cs_new_protected_nopar:Npn \elegant_declare_cover_info:n #1 
   {
     \prop_set_from_keyval:Nn \g__elegant_cover_info_prop { #1 }
-    \prop_map_function:NN \g__elegant_cover_info_prop \__elegant_declare_cover_info:nn
+    \prop_map_inline:Nn \g__elegant_cover_info_prop
+      { \tl_set:cn { l__elegant_cover_info_##1_tl } { ##2 } }
   }
+
+\tl_new:N \l_elegant_tmp_info_tl 
 
 \cs_new_protected_nopar:Npn \elegant_use_cover_info:n #1
   {
     \tl_if_exist:cTF { l__elegant_cover_info_#1_tl }
-    {
-      \tl_use:c { l__elegant_cover_info_#1_tl }
-    }
-    {
-      \elegant_msg_error:nn { undefined cover info }{ #1 }
-    }
+      {
+        \tl_use:c { l__elegant_cover_info_#1_tl }
+      }
+      {
+        \elegant_msg_error:nn { undefined cover info }{ #1 }
+      }
   }
-
-\keys_define:nn { elegant / cover }
-  {
-    info.code:n = \__elegant_cover_info_handler:n { #1 } 
-  }
-
 
 
 \cs_new_protected_nopar:Npn \elegant_declare_cover_style:nn #1#2 
   {
+    \hook_new:n { elegant-module / cover / #1 / before }
+		\hook_new:n { elegant-module / cover / #1 / after }
     \tl_gset:cn { g_elegant_cover_#1_tl } { \titlepage #2 \endtitlepage }
     \clist_gput_right:Nn \g__elegant_cover_clist { #1 }
   }
 
-\AddToHook{begindocument/before}
+\hook_gput_code:nnn{begindocument/before}{.}
   {
     \RenewDocumentCommand\maketitle{O{default}}
       {
         \tl_if_exist:cTF { g_elegant_cover_#1_tl }
         {
+          \hook_use:n { elegant-module / cover / #1 / before }
           \tl_use:c { g_elegant_cover_#1_tl }
+          \hook_use:n { elegant-module / cover / #1 / after }
         }
         {
           % error / message
@@ -136,7 +133,7 @@
   { \elegant_use_cover_info:n { #1 } }
 
 \NewDocumentCommand\ElegantCoverInfo{ m }
-  { \keys_set:nn { elegant / cover } { info = { #1 } } }
+  { \elegant_declare_cover_info:n { #1 } }
 
 
 \endinput

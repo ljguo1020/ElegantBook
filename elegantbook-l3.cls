@@ -113,6 +113,11 @@
 
 \exp_args:NNV \LoadClass[\g__elegant_base_class_options_clist]{book}
 
+% #1: module, #2: name, #3: position, #4: code
+\cs_new_protected:Npn \elegant_add_to_hook:nnnn #1#2#3#4
+  {
+    \hook_gput_code:nnn { elegant-module / #1 / #2 / #3 }{.}{#4}
+  }
 
 \elegant_load_module:n { language }
 

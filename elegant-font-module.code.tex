@@ -15,16 +15,20 @@
 
 \cs_new_protected_nopar:Npn \elegant_declare_font:nn #1#2 
   {
+    \hook_new:n { elegant-module / font / #1 / before }
+		\hook_new:n { elegant-module / font / #1 / after }
     \tl_gset:cn { g_elegant_font_#1_tl } { #2 }
     \clist_gput_right:Nn \g__elegant_font_clist { #1 }
   }
 
 
-\AddToHook{begindocument/before}
+\hook_gput_code:nnn{begindocument/before}{.}
   {
     \tl_if_exist:cTF { g_elegant_font_ \g__elegant_font_tl _tl }
     {
+      \hook_use:n { elegant-module / font / \g__elegant_font_tl / before }
       \tl_use:c { g_elegant_font_ \g__elegant_font_tl _tl }
+      \hook_use:n { elegant-module / font / \g__elegant_font_tl / after }
     }
     {
       % error / message
