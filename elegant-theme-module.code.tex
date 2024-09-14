@@ -1,7 +1,7 @@
 \elegant_provide_module:n{theme}
 
 
-\RequirePackage{xcolor}
+% \RequirePackage{xcolor}
 
 \elegant_msg_new:nn { not support theme }
   {
@@ -25,27 +25,19 @@
 \prop_new:N \l__elegant_colors_prop
 
 
-\cs_set_eq:NN \__elegant_declare_color:nnn \definecolor
+% \cs_set_eq:NN \__elegant_declare_color:nnn \definecolor
 
 
 % #1 name, #2 model, #3 value
 
 \cs_new_protected_nopar:Npn \elegant_declare_color:nnn #1#2#3
   {
-    \tl_if_eq:nnTF { #2 } { name }
-      {
-        \colorlet{ elegant_#1_color }{ #3 }
-      }
-      {
-        \tl_if_eq:nnTF { #2 } { expression }
-          {
-            \colorlet{ elegant_#1_color }{ #3 }
-          }
-          {
-            \__elegant_declare_color:nnn { elegant_#1_color } { #2 } { #3 }
-          }
-      }
+    \elegant_if_package_loaded:nT { xcolor }
+      { \definecolor{ elegant_#1_color }{ #2 }{ #3 } }
+    \color_set:nnn { elegant_#1_color } { #2 } { #3 }
   }
+
+\cs_generate_variant:Nn \color_select:n { o }
 
 \cs_new_nopar:Npn \elegant_use_color:n #1 
   {

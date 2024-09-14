@@ -54,6 +54,12 @@
 \cs_generate_variant:Nn \tl_if_exist_use:N { c }
 
 
+\prg_new_conditional:Npnn \elegant_if_package_loaded:n #1 {p, T, F, TF}
+  {
+    \@ifpackageloaded { #1 }
+      \prg_return_true:
+      \prg_return_false:
+  }
 
 
 % class options
@@ -112,6 +118,10 @@
   }
 
 \exp_args:NNV \LoadClass[\g__elegant_base_class_options_clist]{book}
+
+
+
+
 
 % #1: module, #2: name, #3: position, #4: code
 \cs_new_protected:Npn \elegant_add_to_hook:nnnn #1#2#3#4

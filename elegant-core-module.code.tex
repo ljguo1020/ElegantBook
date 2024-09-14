@@ -23,7 +23,7 @@
     \exp_args:Nc \titleformat{#1}{}{}{0em}
       {
         #2
-        \color{ \elegant_use_color:n { headline } } 
+        \color_select:o { \elegant_use_color:n { headline } } 
         \ifttl@label
           \elegant_use_name:n { #1 / before } 
           \elegant_use_name:n { #1 / number } 
@@ -46,15 +46,15 @@
 \RequirePackage{fancyhdr}
 \fancyhf{}
 
-\fancyfoot[c]{\color{ \elegant_use_color:n { structure } }\small\thepage}
+\fancyfoot[c]{\color_select:o { \elegant_use_color:n { structure } }\small\thepage}
 \if@twoside
-  \fancyhead[EL]{\color{ \elegant_use_color:n { structure } }\small\leftmark}
-  \fancyhead[OR]{\color{ \elegant_use_color:n { structure } }\small\rightmark}
+  \fancyhead[EL]{\color_select:o { \elegant_use_color:n { structure } }\small\leftmark}
+  \fancyhead[OR]{\color_select:o { \elegant_use_color:n { structure } }\small\rightmark}
 \else
-  \fancyhead[R]{\color{ \elegant_use_color:n { structure } }\small\rightmark}
+  \fancyhead[R]{\color_select:o { \elegant_use_color:n { structure } }\small\rightmark}
 \fi
 
-\RenewDocumentCommand{\headrule}{}{\color{ \elegant_use_color:n { structure } }\hrule width\textwidth}
+\RenewDocumentCommand{\headrule}{}{\color_select:o { \elegant_use_color:n { structure } }\hrule width\textwidth}
 \pagestyle{fancy}
 \RenewDocumentCommand{\headrulewidth}{}{1pt}
 \fancypagestyle{plain}{\RenewDocumentCommand{\headrulewidth}{}{0pt}\fancyhf{}\RenewDocumentCommand{\headrule}{}{}}
@@ -86,6 +86,7 @@
   plainpages = false,
   pdfstartview = FitH,
   pdfborder = {0 0 0},
+  pdfcreator = LaTeX
 }
 
 

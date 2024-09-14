@@ -44,7 +44,7 @@
 
 \elegant_declare_theorem_mode:nn { fancy }
   {
-    \@ifpackageloaded{tcolorbox}
+    \elegant_if_package_loaded:nTF { tcolorbox }
       {
         \tcbuselibrary{many}
       }
@@ -153,7 +153,7 @@
 		\cs_new_nopar:Npn \__elegant_theorem_new_enviroment_handle:nn #1#2 
 			{
 				\newtheoremstyle{#1}{3pt}{3pt}{\itshape}{-3pt}{
-					\bfseries\color{ \elegant_use_color:n { #1 } }}{}{0.5em}
+					\bfseries\color_select:o { \elegant_use_color:n { #1 } }}{}{0.5em}
 					{
 						\thmname{ ##1 } \thmnumber{ \use:c { the#2} } \thmnote{~(##3) }
 					}
