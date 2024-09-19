@@ -36,6 +36,21 @@
     }
   }
 
+\clist_map_inline:nn { adobe, fandol, founder, mac, macnew, macold, ubuntu, windows }
+  {
+    \elegant_declare_font:nn { ctex-#1 }
+      {
+        \elegant_if_package_loaded:nTF { ctex }
+          {
+            \ctex_set:n { fontset = #1 }
+          }
+          {
+            \RequirePackage[fontset = #1]{ ctex }
+          }
+      }
+  }
+
+
 
 \elegant_declare_font:nn { founder }
   {

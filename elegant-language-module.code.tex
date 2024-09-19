@@ -27,8 +27,6 @@
 
 \hook_gput_code:nnn{begindocument/before}{.}
   {
-    \let \xeCJK@document@left@hook \relax
-    \let \xeCJK@document@hook \relax
     \tl_if_exist:cTF { g_elegant_language_ \g__elegant_language_tl _tl }
     {
       \hook_use:n { elegant-module / language / \g__elegant_language_tl / before }
@@ -70,7 +68,7 @@
 
 \elegant_declare_language:nn { cn }
   {
-    \RequirePackage[UTF8, fontset = none]{ctex}
+    \RequirePackage[UTF8]{ctex}
     \elegant_define_name:n 
       {
         chapter / before  = 第,

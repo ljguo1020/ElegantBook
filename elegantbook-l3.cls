@@ -129,13 +129,20 @@
     \hook_gput_code:nnn { elegant-module / #1 / #2 / #3 }{.}{#4}
   }
 
+\hook_gput_code:nnn{begindocument/before}{.}
+  {
+    \let \xeCJK@document@left@hook \relax
+    \let \xeCJK@document@hook \relax
+  }
+
+\elegant_load_module:n { font }
 \elegant_load_module:n { language }
 
 \elegant_load_module:n { theme }
 
 \elegant_load_module:n { cover }
 
-\elegant_load_module:n { font }
+
 
 \elegant_load_module:n { core }
 
