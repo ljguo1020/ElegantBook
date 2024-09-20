@@ -1,6 +1,12 @@
 \elegant_provide_module:n{core}
 
 
+\hook_gput_code:nnn{begindocument/before}{.} 
+  {
+    \cs_set:Npx \contentsname { \elegant_use_name:n { contents } }
+  }
+
+
 \PassOptionsToPackage{fontset = none}{ctex}
 
 \RequirePackage{geometry, tikz}
@@ -144,6 +150,41 @@
 \setlist[itemize, 2]{label = \elegant@enum@item@ii}
 \setlist[itemize, 3]{label = \elegant@enum@item@iii}
 
+
+\RequirePackage{multicol}
+
+\RequirePackage{tcolorbox}
+
+\tcbset{
+  introductionsty/.style={
+    enhanced,
+    breakable,
+    colback = \elegant_use_color:n { structure }!10,
+    colframe = \elegant_use_color:n { structure },
+    fonttitle = \bfseries,
+    colbacktitle = \elegant_use_color:n { structure },
+    % fontupper = \itshape,
+    attach~boxed~title~to~top~center = { yshift = -3mm, yshifttext = -1mm },
+    boxrule = 0pt,
+    toprule = 0.5pt,
+    bottomrule = 0.5pt,
+    top = 8pt,
+    before~skip = 8pt,
+    sharp~corners
+  }
+}
+
+\NewDocumentEnvironment{introduction}{ O{ \elegant_use_name:n { introduction } } }
+  {
+    \begin{tcolorbox}[introductionsty, title = {#1}]
+      \begin{multicols}{2}
+        \begin{itemize}[label = \color_select:o { \elegant_use_color:n { structure } } {\upshape\scriptsize \elegant_use_name:n { introduction / icon }}]
+  }
+  {
+        \end{itemize}
+      \end{multicols}
+    \end{tcolorbox}
+  }
 
 
 \endinput

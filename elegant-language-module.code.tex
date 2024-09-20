@@ -69,8 +69,14 @@
 \elegant_declare_language:nn { cn }
   {
     \RequirePackage[UTF8]{ctex}
+    \RequirePackage{bbding}
     \elegant_define_name:n 
       {
+        contents = 目录,
+        figure = 图,
+        table = 表,
+        listoffigure = 插图目录,
+        listoftable = 表格目录,
         chapter / before  = 第,
           chapter / after = 章,
           chapter / number = \chinese{chapter},
@@ -87,7 +93,9 @@
         corollary = 推论,
         lemma = 引理,
           lemma / icon = $\spadesuit$,
-        proposition = 命题
+        proposition = 命题,
+        introduction = 内容提要,
+          introduction / icon = \SquareShadowBottomRight
       }
   }
 
