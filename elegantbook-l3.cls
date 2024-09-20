@@ -117,6 +117,8 @@
     \int_gset_eq:NN \c@secnumdepth \g__elegant_secnumdepth_int 
   }
 
+\PassOptionsToClass{ oneside } { book }  
+
 \exp_args:NNV \LoadClass[\g__elegant_base_class_options_clist]{book}
 
 
@@ -136,6 +138,7 @@
   }
 
 \elegant_load_module:n { font }
+
 \elegant_load_module:n { language }
 
 \elegant_load_module:n { theme }

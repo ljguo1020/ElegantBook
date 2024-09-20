@@ -50,25 +50,84 @@
       }
   }
 
-
+\elegant_declare_font:nn { none }{ \relax }
 
 \elegant_declare_font:nn { founder }
   {
     \RequirePackage{xeCJK}
-    \setCJKmainfont{LXGWWenKai}[
-      BoldFont = *-Bold,
-      ItalicFont = *-Bold,
-      BoldItalicFont = *-Bold,
-      UprightFont = *-Regular
+
+    \setCJKmainfont{FZShuSong-Z01}[
+      BoldFont = FZHei-B01,
+      BoldFeatures = { FakeBold = 1.5 },
+      ItalicFont = FZKai-Z03,
+      BoldItalicFont = FZHei-B01,
+      BoldItalicFeatures = { FakeBold = 1.5 }
     ]
-    \setmainfont{Go}[
-      Extension = .ttf,
-      BoldFont = *-Bold,
-      ItalicFont = *-Regular-Italic,
-      BoldItalicFont = *-Bold-Italic,
-      UprightFont = *-Regular,
-      SmallCapsFont = *Smallcaps
+
+    \setCJKsansfont{FZKai-Z03}[
+      BoldFont = FZHei-B01,
+      BoldFeatures = { FakeBold = 1.5 },
+      ItalicFont = FZKai-Z03
     ]
+
+    \setCJKmonofont{FZFangSong-Z02}[
+      BoldFont = FZHei-B01,
+      BoldFeatures = { FakeBold = 1.5 },
+      ItalicFont = FZKai-Z03
+    ]
+
+    \setCJKfamilyfont{zhsong}{FZShuSong-Z01}[AutoFakeBold = 1.5]
+    \setCJKfamilyfont{zhhei}{FZHei-B01}[AutoFakeBold = 1.5]
+    \setCJKfamilyfont{zhkai}{FZKai-Z03}[AutoFakeBold = 1.5]
+    \setCJKfamilyfont{zhfs}{FZFangSong-Z02}[AutoFakeBold = 1.5]
+    \setCJKfamilyfont{zhlishu}{FZLiShu-S01}[AutoFakeBold = 1.5]
+
+    \DeclareDocumentCommand \songti   {}{ \CJKfamily{zhsong} }
+    \DeclareDocumentCommand \heiti    {}{ \CJKfamily{zhhei} }
+    \DeclareDocumentCommand \kaishu   {}{ \CJKfamily{zhkai} }
+    \DeclareDocumentCommand \fangsong {}{ \CJKfamily{zhfs} }
+    \DeclareDocumentCommand \lishu    {}{ \CJKfamily{zhlishu} }
   }
 
+\elegant_declare_font:nn { source-han }
+  {
+    \RequirePackage{xeCJK}
+
+    \setCJKmainfont{SourceHanSerifSC}[
+      UprightFont = *-Regular,
+      BoldFont = *-Bold,
+      ItalicFont = LXGWWenKai-Regular.ttf,
+      BoldItalicFont = *-Bold,
+      Extension = .otf,
+    ]
+
+    \setCJKmonofont{SourceHanSansCN}[
+      UprightFont = *-Regular,
+      BoldFont = *-Bold,
+      Extension = .otf
+    ]
+
+    \setCJKfamilyfont{zhsong}{SourceHanSerifSC}[
+      UprightFont = *-Regular,
+      Extension = .otf,
+      AutoFakeBold = 1.5
+    ]
+    
+    \setCJKfamilyfont{zhhei}{SourceHanSansCN}[
+      UprightFont = *-Regular,
+      BoldFont = *-Bold,
+      Extension = .otf
+    ]
+
+    \setCJKfamilyfont{zhkai}{LXGWWenKai}[
+      Extension = .ttf,
+      UprightFont = *-Regular,
+      BoldFont = *-Bold
+    ]
+
+    \DeclareDocumentCommand \songti   {}{ \CJKfamily{zhsong} }
+    \DeclareDocumentCommand \heiti    {}{ \CJKfamily{zhhei} }
+    \DeclareDocumentCommand \kaishu   {}{ \CJKfamily{zhkai} }
+
+  }
 \endinput

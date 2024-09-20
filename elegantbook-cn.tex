@@ -1,17 +1,21 @@
 \documentclass[
-  leqno, 
-  lang = cn, 
+  % leqno, 
+  % lang = cn, 
   % theme = Techno Blue, 
   theme = Fresh Green,
   % fleqn, 
   % font = ctex-windows, 
-  twoside,
+  % font = none,
+  % font = noto,
+  % twoside,
   % tocdepth = 5, 
   % secnumdepth = 4,
-  usesamecnt,
-  thmcnt = section,
-  mode = fancy,
-  11pt
+  % usesamecnt,
+  % thmcnt = section,
+  % mode = fancy,
+  % 11pt,
+  % oneside,
+  % openany
 ]{elegantbook-l3}
 
 \usepackage{amsmath, amssymb, array}
@@ -37,7 +41,7 @@
   institute = ElegantBook Program,
   version = v1.0,
   date = 2023/10/01,
-  extrainfo = {注意：本模板自 2023 年 1 月 1 日开始，不再更新和维护！}
+  extrainfo = {注意: 这是 ElegantBook 的重构版本，基于 \LaTeX3}
 }
 
 % \ElegantCoverInfo{
@@ -48,13 +52,16 @@
 %   date = \zhtoday
 % }
 
-\maketitle[default]
+\maketitle
+% aaa
+\frontmatter
 
 \tableofcontents
 
 
 
 
+\mainmatter
 \chapter{如何入门使用 ElegantBook}
 
 \section{如何入门使用 ElegantBook}
@@ -66,7 +73,6 @@
   \begin{equation}
     a^2 + b^2 = c^2
   \end{equation}
-  aaa asfasf text的阿斯顿 aaa asfasf text的阿斯顿 aaa asfasf text的阿斯顿 aaa asfasf text的阿斯顿 aaa 
 \end{theorem}
 
 \lipsum[1-5]
@@ -109,14 +115,47 @@
 \end{proposition*}
 
 \begin{proposition}
-  aaaa
+  aaaa \ttfamily aaaa
 \end{proposition}
 
-
+1234567 {\ttfamily 1234567} 
 % \zhlipsum
 % \lipsum
 
+
+
 \ref{aaa}
+
+\begin{itemize}
+  \item 官网：\href{https://elegantlatex.org/}{https://elegantlatex.org/}
+  \item GitHub 地址：\href{https://github.com/ElegantLaTeX/}{https://github.com/ElegantLaTeX/}
+  \item CTAN 地址：\href{https://ctan.org/pkg/elegantbook}{https://ctan.org/pkg/elegantbook}
+  \item 下载地址：\href{https://github.com/ElegantLaTeX/ElegantBook/releases}{正式发行版}，\href{https://github.com/ElegantLaTeX/ElegantBook/archive/master.zip}{最新版}
+  \item Bilibili：\href{https://space.bilibili.com/516479629}{ElegantLaTeX}
+  \item 用户 QQ 群：692108391
+  \begin{itemize}
+    \item aaaa
+    \begin{itemize}
+      \item bbb
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+
+\begin{enumerate}
+  \item 官网：\href{https://elegantlatex.org/}{https://elegantlatex.org/}
+  \item GitHub 地址：\href{https://github.com/ElegantLaTeX/}{https://github.com/ElegantLaTeX/}
+  \item CTAN 地址：\href{https://ctan.org/pkg/elegantbook}{https://ctan.org/pkg/elegantbook}
+  \item 下载地址：\href{https://github.com/ElegantLaTeX/ElegantBook/releases}{正式发行版}，\href{https://github.com/ElegantLaTeX/ElegantBook/archive/master.zip}{最新版}
+  \item Bilibili：\href{https://space.bilibili.com/516479629}{ElegantLaTeX}
+  \item 用户 QQ 群：692108391
+  \begin{enumerate}
+    \item aaaa
+    \begin{enumerate}
+      \item bbb
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
 
 \end{document}
 

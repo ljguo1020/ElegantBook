@@ -83,14 +83,67 @@
   bookmarksopen = true,
   pdfkeywords = {ElegantBook, elegantlatex.top},
   colorlinks,
-  linkcolor= \elegant_use_color:n { headline },
-  citecolor= \elegant_use_color:n { headline },
-  urlcolor= \elegant_use_color:n { headline },
+  linkcolor= \elegant_use_color:n { structure },
+  citecolor= \elegant_use_color:n { structure },
+  urlcolor= \elegant_use_color:n { structure },
   plainpages = false,
   pdfstartview = FitH,
   pdfborder = {0 0 0},
   pdfcreator = LaTeX
 }
+
+% 全局英文字体配置
+\RequirePackage{fontspec}
+
+\setmainfont{TeXGyreTermesX}[
+  UprightFont = *-Regular ,
+  BoldFont = *-Bold ,
+  ItalicFont = *-Italic ,
+  BoldItalicFont = *-BoldItalic ,
+  Extension = .otf ,
+  Scale = 1.0]
+  
+\setsansfont{texgyreheros}[
+  UprightFont = *-regular ,
+  BoldFont = *-bold ,
+  ItalicFont = *-italic ,
+  BoldItalicFont = *-bolditalic ,
+  Extension = .otf ,
+  Scale = 0.9]
+
+
+\NewDocumentCommand \circled { m } {
+  \tikz[baseline = (char.base)] {
+    \node[shape = circle, draw, inner sep = 1pt] (char) {#1};
+  }
+}
+
+\ExplSyntaxOff
+  \usetikzlibrary{shadows}
+\ExplSyntaxOn
+
+\NewDocumentCommand \elegant@enum@item@i { } {
+  \tikz \draw [baseline, ball~color = \elegant_use_color:n { structure }, draw = none] circle (2pt);
+}
+
+\NewDocumentCommand \elegant@enum@item@ii { } {
+  \tikz \draw [baseline, fill = \elegant_use_color:n { structure }, draw = none, circular~drop~shadow] circle (2pt);
+}
+
+\NewDocumentCommand \elegant@enum@item@iii { } {
+  \tikz \draw [baseline, fill = \elegant_use_color:n { structure }, draw = none] circle (2pt);
+}
+
+\RequirePackage{enumitem}
+
+\setlist[enumerate, 1]{label = \color_select:o { \elegant_use_color:n { structure } } \arabic*.}
+\setlist[enumerate, 2]{label = \color_select:o { \elegant_use_color:n { structure } } (\alph*).}
+\setlist[enumerate, 3]{label = \color_select:o { \elegant_use_color:n { structure } } \Roman*.}
+\setlist[enumerate,4]{label = \color_select:o { \elegant_use_color:n { structure } } \Alph*.}
+\setlist[itemize, 1]{label = \elegant@enum@item@i}
+\setlist[itemize, 2]{label = \elegant@enum@item@ii}
+\setlist[itemize, 3]{label = \elegant@enum@item@iii}
+
 
 
 \endinput
