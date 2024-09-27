@@ -54,14 +54,16 @@
     
     \tcbset{
       common /.style = {
-        fontupper = \itshape,
+        fontupper = \rmfamily,
         lower~separated = false,
         coltitle = white,
         boxrule = 0.5pt,
         fonttitle = \bfseries,
+        before~upper*={\setlength{\parindent}{2em}},
         enhanced,
         breakable,
         top = 8pt,
+        bottom = 8pt,
         before~skip = 8pt,
         attach~boxed~title~to~top~left = {
           yshift = -0.11in,
@@ -106,7 +108,7 @@
 							colframe = \elegant_use_color:n { #1 },
 							colback = \elegant_use_color:n { #1 }!5,
 							colbacktitle = \elegant_use_color:n { #1 },
-							title = \elegant_use_name:n { #1 } \use:c { the#2 } \ \IfNoValueF{##1}{(##1)},
+							title = {\elegant_use_name:n { #1 }~\use:c { the#2 } ~\IfNoValueF{##1}{(##1)}},
 							overlay~unbroken~and~last = {
 								\node[anchor = south~east, outer~sep = 0pt, text = \elegant_use_color:n { #1 }] at (\linewidth-width, 0) 
 								{ \elegant_use_name:n { #1 / icon } };
@@ -136,7 +138,7 @@
       }
     % define the tcbs
     \clist_map_inline:nn 
-      { theorem, definition, postulate, axiom, corollary, lemma, proposition }
+      { theorem, definition, postulate, axiom, corollary, lemma, proposition, remark }
       {
         \elegantnewtheorem { #1 }
       }
@@ -152,10 +154,10 @@
 
 		\cs_new_nopar:Npn \__elegant_theorem_new_enviroment_handle:nn #1#2 
 			{
-				\newtheoremstyle{#1}{3pt}{3pt}{\itshape}{-3pt}{
+				\newtheoremstyle{#1}{3pt}{3pt}{\rmfamily}{-3pt}{
 					\bfseries\color_select:o { \elegant_use_color:n { #1 } }}{}{0.5em}
 					{
-						\thmname{ ##1 } \thmnumber{ \use:c { the#2} } \thmnote{~(##3) }
+						\thmname{ ##1 }~\thmnumber{ \use:c { the#2} }~\thmnote{(##3) }
 					}
 
 				\theoremstyle{#1}
@@ -186,7 +188,7 @@
 			}
 		
 		\clist_map_inline:nn 
-      { theorem, definition, postulate, axiom, corollary, lemma, proposition }
+      { theorem, definition, postulate, axiom, corollary, lemma, proposition, remark }
       {
         \elegantnewtheorem { #1 }
       }
